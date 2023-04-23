@@ -9,6 +9,9 @@
 ## 新建文件夹
 https://blog.csdn.net/Maiduoudo/article/details/101061643
 
+## 文档内的目录
+如何写一个跟这篇的头头一样的目录？直接看这篇的目录,[]里和后面#后的文字和目录指向的标题吻合即可
+
 ## 上传图片
 建议所有用于文档的图片放入*LittleLittleWeb/Doc/Images*中，便于文档统一图片链接
 
