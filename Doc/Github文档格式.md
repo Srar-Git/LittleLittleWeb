@@ -40,4 +40,7 @@ https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-wr
 https://docs.github.com/zh/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables
 ## 图片使用
 虽然官方文档里有写，但是我们可以直接用*LittleLittleWeb/Doc/Images*中的图片链接
-
+例子：使用/LittleLittleWeb/Doc/Images/Cassidy.png
+```
+![example icon](/LittleLittleWeb/Doc/Images/Cassidy.png)
+```
