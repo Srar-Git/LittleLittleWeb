@@ -49,4 +49,8 @@ https://docs.github.com/zh/get-started/writing-on-github/working-with-advanced-f
 ```
 ![example icon](/Doc/Images/Cassidy.png)
 
-
+也可以使用`HTML`格式代码来改变图片的大小，例如使用如下代码呈现的效果
+```
+<img src="/Doc/Images/Cassidy.png" width="500px">
+```
+<img src="/Doc/Images/Cassidy.png" width="500px">
