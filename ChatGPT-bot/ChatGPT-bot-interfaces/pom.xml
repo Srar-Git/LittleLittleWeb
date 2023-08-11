@@ -72,6 +72,12 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.littlelittleweb</groupId>
+            <artifactId>ChatGPT-bot-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <properties>

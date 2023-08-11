@@ -1,2 +1,4 @@
 server:
   port: 8090
+chatgpt:
+  openAIKey: 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
