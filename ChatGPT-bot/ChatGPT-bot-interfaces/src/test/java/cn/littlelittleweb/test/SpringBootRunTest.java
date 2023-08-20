@@ -1,6 +1,6 @@
 package cn.littlelittleweb.test;
 
-import cn.littlelittleweb.domain.ChatGPT.IOpenAI;
+import cn.littlelittleweb.Domain.ChatGPT.IOpenAI;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

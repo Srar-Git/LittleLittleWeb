@@ -1,4 +1,4 @@
-package cn.littlelittleweb.domain.ChatGPT;
+package cn.littlelittleweb.Domain.ChatGPT;
 
 import java.io.IOException;
 

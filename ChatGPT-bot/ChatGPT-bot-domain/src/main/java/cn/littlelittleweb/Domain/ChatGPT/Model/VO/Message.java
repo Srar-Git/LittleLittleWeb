@@ -1,4 +1,4 @@
-package cn.littlelittleweb.domain.ChatGPT.Model.VO;
+package cn.littlelittleweb.Domain.ChatGPT.Model.VO;
 
 /**
  * @author pyf
