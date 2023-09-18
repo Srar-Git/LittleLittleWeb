@@ -7,6 +7,10 @@ import router from "./routers/index";
 import 'element-plus/dist/index.css'
 import App from './App.vue'
 import pinia from './stores';
+import materialKit from "./material-kit";
+
+
+
 const app = createApp(App)
 app.config.globalProperties.Bus = mitt()
 
@@ -17,5 +21,6 @@ app.use(ElementPlus, {
 })
 app.use(pinia)
 app.use(router)
+app.use(materialKit);
 app.mount('#app')
 

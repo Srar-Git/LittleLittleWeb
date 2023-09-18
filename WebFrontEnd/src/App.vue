@@ -7,7 +7,7 @@
 
 
 <script >
-import Header from './components/Header.vue'
+// import Header from './components/Header.vue'
  import { defineComponent } from 'vue'
   export default  defineComponent({
     name:'App'
@@ -21,9 +21,9 @@ const route = useRoute() // 路由信息对象
  const isHeader =  computed(() => {
     return route.name !== "Login" && route.name !== "Register" && route.name !== "addNews";
 })
-  
+
 </script>
 
 <style lang="less" scoped>
-  
+
 </style>
