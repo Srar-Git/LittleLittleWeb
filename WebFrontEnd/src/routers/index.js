@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { staticRoutes } from "./routes";
 import { useUserInfoStore } from '../stores/userInfo';
+// import PresentationView from "../pages/Home/HomeView.vue";
 import pinia from '../stores';
 import { getToken, removeToken } from '../utils/token-utils';
 import { ElMessage } from 'element-plus';

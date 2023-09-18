@@ -2,7 +2,8 @@
 export const staticRoutes = [
   {
     path: "/",
-    redirect: "/headlinenews",
+    name: "home",
+    component: () => import("../pages/Home/HomeView.vue"),
   },
   {
     // 头条
