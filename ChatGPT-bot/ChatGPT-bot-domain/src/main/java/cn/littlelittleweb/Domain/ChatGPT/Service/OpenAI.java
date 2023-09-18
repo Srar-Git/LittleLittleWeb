@@ -1,8 +1,8 @@
-package cn.littlelittleweb.domain.ChatGPT.Service;
+package cn.littlelittleweb.Domain.ChatGPT.Service;
 
-import cn.littlelittleweb.domain.ChatGPT.IOpenAI;
-import cn.littlelittleweb.domain.ChatGPT.Model.Aggregate.ChatGPTAnswer;
-import cn.littlelittleweb.domain.ChatGPT.Model.VO.Choices;
+import cn.littlelittleweb.Domain.ChatGPT.IOpenAI;
+import cn.littlelittleweb.Domain.ChatGPT.Model.Aggregate.ChatGPTAnswer;
+import cn.littlelittleweb.Domain.ChatGPT.Model.VO.Choices;
 import com.alibaba.fastjson.JSON;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;

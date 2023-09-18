@@ -1,7 +1,7 @@
-package cn.littlelittleweb.domain.ChatGPT.Model.Aggregate;
+package cn.littlelittleweb.Domain.ChatGPT.Model.Aggregate;
 
-import cn.littlelittleweb.domain.ChatGPT.Model.VO.Choices;
-import cn.littlelittleweb.domain.ChatGPT.Model.VO.Usage;
+import cn.littlelittleweb.Domain.ChatGPT.Model.VO.Choices;
+import cn.littlelittleweb.Domain.ChatGPT.Model.VO.Usage;
 
 import java.util.List;
 
