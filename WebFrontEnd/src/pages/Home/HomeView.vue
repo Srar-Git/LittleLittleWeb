@@ -9,7 +9,7 @@ import Header from "../Home/Sections/Header.vue";
 import PresentationPages from "./Sections/Articles.vue";
 
 //images
-import vueMkHeader from "../../assets/img/vue-mk-header.jpg";
+import vueMkHeader from "../../assets/img/bg/bk.png";
 import MaterialInput from "../../components/MaterialInput.vue";
 
 //hooks
@@ -45,12 +45,15 @@ onUnmounted(() => {
               class="text-white pt-3 mt-n5 me-2"
               :style="{ display: 'inline-block ' }"
             >
-              Material Kit 2
+              LittleLittle Web
             </h1>
-            <p class="lead text-white px-5 mt-3" :style="{ fontWeight: '500' }">
-              Start the Development With Bootstrap 5 Design System inspired by
-              Material Design.
-            </p>
+<!--            <p class="lead text-white px-5 mt-4" :style="{ fontWeight: '500' }">-->
+<!--              这里收录了一些小文章和小功能-->
+
+<!--            </p>            <p class="lead text-white px-1 mt-3" :style="{ fontWeight: '500' }">-->
+<!--            本站所有图像内容均由AI生成(logo除外).-->
+
+<!--            </p>-->
           </div>
         </div>
 

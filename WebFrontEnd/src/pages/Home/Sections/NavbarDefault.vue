@@ -124,38 +124,18 @@ watch(
         LittleLittle Web
       </RouterLink>
 
-
-      <div class="input-group input-group-dynamic ms-sm-3 max-width-500" id="search-input">
-        <!--        <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>-->
-        <!--        <input class="form-control" placeholder="查找内容" type="text">-->
-        <MaterialInput
-            class="input-group-dynamic "
-            icon="search"
-            type="text"
-            placeholder="查找文章内容"
-        />
-
-      </div>
-
-      <!--      <div class="navbar-nav d-lg-block d-none" id="search-button">-->
-      <!--        <button class="btn btn-icon btn-2 btn-outline-primary  " type="button">-->
-      <!--          <span class="btn-inner&#45;&#45;icon"><i class="ni ni-button-play"></i></span>-->
-      <!--          <span class="btn-inner&#45;&#45;text">搜索</span>-->
-      <!--        </button>-->
-      <!--      </div>-->
-
       <div
-          class="collapse navbar-collapse  pt-3 pb-1 py-lg-0"
-          id="navigation"
+          class=" "
+          id="search-btn"
       >
         <ul class="navbar-nav navbar-nav-hover ms-auto">
-          <li class="nav-item dropdown dropdown-hover mx-2">
+          <li class="nav-item dropdown dropdown-hover ms-2">
             <a
                 href="https://github.com/AnLan1214090013/LittleLittleWeb"
                 class="nav-link d-flex cursor-pointer align-items-center"
             >
               <svg t="1695213574640"
-                   class="material-icons me-2 opacity-6"
+                   class="material-icons  opacity-6"
                    viewBox="0 0 1024 1024"
                    xmlns="http://www.w3.org/2000/svg"
                    p-id="4003"
@@ -174,6 +154,27 @@ watch(
           </li>
         </ul>
       </div>
+
+      <div class="input-group input-group-dynamic" id="search-input">
+        <!--        <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>-->
+        <!--        <input class="form-control" placeholder="查找内容" type="text">-->
+        <MaterialInput
+            class="input-group-dynamic "
+            icon="search"
+            type="text"
+            placeholder="在LittleLittleWeb中查找内容"
+        />
+
+      </div>
+
+      <!--      <div class="navbar-nav d-lg-block d-none" id="search-button">-->
+      <!--        <button class="btn btn-icon btn-2 btn-outline-primary  " type="button">-->
+      <!--          <span class="btn-inner&#45;&#45;icon"><i class="ni ni-button-play"></i></span>-->
+      <!--          <span class="btn-inner&#45;&#45;text">搜索</span>-->
+      <!--        </button>-->
+      <!--      </div>-->
+
+
 
 
       <!--      article和github环节-->

@@ -11,10 +11,10 @@ import imgSigninCover from "../../../assets/img/signin-cover.png";
       <div class="row">
         <div class="row text-center my-sm-5 mt-5">
           <div class="col-lg-6 mx-auto">
-            <MaterialBadge color="success" class="mb-3"
-              >Boost creativity</MaterialBadge
-            >
-            <h2 class="">With our coded pages</h2>
+<!--            <MaterialBadge color="success" class="mb-3"-->
+<!--              >Boost creativity</MaterialBadge-->
+<!--            >-->
+            <h2 class="">欢迎来到我们的小站</h2>
             <p class="lead">
               The easiest way to get started is to use one of our <br />
               pre-built example pages.
