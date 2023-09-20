@@ -10,6 +10,7 @@ import PresentationPages from "./Sections/Articles.vue";
 
 //images
 import vueMkHeader from "../../assets/img/bg/bk.png";
+import logo from "../../assets/img/icon/logo.png";
 import MaterialInput from "../../components/MaterialInput.vue";
 
 //hooks
@@ -39,14 +40,26 @@ onUnmounted(() => {
       loading="lazy"
     >
       <div class="container">
+
+        <div class=" align-items-center ms-7">
+<!--              <img src="../../assets/img/icon/logo.png" height="191" width="819" alt="">-->
+              <img src="../../assets/img/icon/logo.png" height="238" width="1023" alt="">
+        </div>
+
+
+
         <div class="row">
           <div class="col-lg-7 text-center mx-auto position-relative">
-            <h1
-              class="text-white pt-3 mt-n5 me-2"
-              :style="{ display: 'inline-block ' }"
-            >
-              LittleLittle Web
-            </h1>
+<!--            <h1-->
+<!--              class="text-white pt-3 mt-n5 me-2"-->
+<!--              :style="{ display: 'inline-block ' }"-->
+<!--            >-->
+<!--              LittleLittle Web-->
+
+<!--            </h1>-->
+            <div alt="logo" src=url(${logo})>
+
+            </div>
 <!--            <p class="lead text-white px-5 mt-4" :style="{ fontWeight: '500' }">-->
 <!--              这里收录了一些小文章和小功能-->
 
