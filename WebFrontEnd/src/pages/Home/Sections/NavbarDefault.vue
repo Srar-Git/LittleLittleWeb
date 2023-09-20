@@ -132,7 +132,11 @@ watch(
             class="input-group-dynamic "
             icon="search"
             type="text"
+<<<<<<< HEAD
             placeholder="查找内容我"
+=======
+            placeholder="查找内容"
+>>>>>>> origin/main
         />
       </div>
 
