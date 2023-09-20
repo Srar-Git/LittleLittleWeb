@@ -125,22 +125,55 @@ watch(
       </RouterLink>
 
 
-      <div class="input-group input-group-dynamic ms-sm-3 max-width-500">
-<!--        <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>-->
-<!--        <input class="form-control" placeholder="查找内容" type="text">-->
+      <div class="input-group input-group-dynamic ms-sm-3 max-width-500" id="search-input">
+        <!--        <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>-->
+        <!--        <input class="form-control" placeholder="查找内容" type="text">-->
         <MaterialInput
             class="input-group-dynamic "
             icon="search"
             type="text"
             placeholder="查找文章内容"
         />
+
       </div>
 
+      <!--      <div class="navbar-nav d-lg-block d-none" id="search-button">-->
+      <!--        <button class="btn btn-icon btn-2 btn-outline-primary  " type="button">-->
+      <!--          <span class="btn-inner&#45;&#45;icon"><i class="ni ni-button-play"></i></span>-->
+      <!--          <span class="btn-inner&#45;&#45;text">搜索</span>-->
+      <!--        </button>-->
+      <!--      </div>-->
 
-      <button class="btn btn-icon btn-2 btn-outline-primary w-9  py-lg-2 mx-2" type="button">
-        <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
-        <span class="btn-inner--text">搜索</span>
-      </button>
+      <div
+          class="collapse navbar-collapse  pt-3 pb-1 py-lg-0"
+          id="navigation"
+      >
+        <ul class="navbar-nav navbar-nav-hover ms-auto">
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a
+                href="https://github.com/AnLan1214090013/LittleLittleWeb"
+                class="nav-link d-flex cursor-pointer align-items-center"
+            >
+              <svg t="1695213574640"
+                   class="material-icons me-2 opacity-6"
+                   viewBox="0 0 1024 1024"
+                   xmlns="http://www.w3.org/2000/svg"
+                   p-id="4003"
+                   width="24px"
+                   height="24px"
+              >
+                <path
+                    d="M448 85.333333a362.666667 362.666667 0 0 1 284.842667 587.178667l193.28 193.28a42.666667 42.666667 0 0 1-60.288 60.373333l-193.365334-193.28A362.666667 362.666667 0 1 1 448 85.333333z m0 85.333334a277.333333 277.333333 0 1 0 0 554.666666 277.333333 277.333333 0 0 0 0-554.666666z"
+                    fill="#000000" p-id="4004"
+                >
+
+                </path>
+              </svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
 
 
       <!--      article和github环节-->
