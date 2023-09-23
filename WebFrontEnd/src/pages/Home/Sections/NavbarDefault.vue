@@ -17,7 +17,7 @@ const props = defineProps({
     label: String,
     default: () => ({
       route: "https://github.com/AnLan1214090013/LittleLittleWeb",
-      color: "bg-gradient-success",
+      color: "bg-gradient-primary",
       label: "登陆"
     })
   },
