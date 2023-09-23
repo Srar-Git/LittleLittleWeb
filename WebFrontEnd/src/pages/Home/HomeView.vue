@@ -9,7 +9,7 @@ import Header from "../Home/Sections/Header.vue";
 import PresentationPages from "./Sections/Articles.vue";
 
 //images
-import vueMkHeader from "../../assets/img/bg/966316.jpg";
+import vueMkHeader from "../../assets/img/bg/bk.png";
 import logo from "../../assets/img/icon/logo.png";
 import MaterialInput from "../../components/MaterialInput.vue";
 
@@ -35,7 +35,7 @@ onUnmounted(() => {
   </div>
   <Header>
     <div
-      class="page-header min-vh-75 blur"
+      class="page-header min-vh-75"
       :style="`background-image: url(${vueMkHeader})`"
       loading="lazy"
     >
