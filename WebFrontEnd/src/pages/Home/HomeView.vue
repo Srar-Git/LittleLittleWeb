@@ -9,7 +9,7 @@ import Header from "../Home/Sections/Header.vue";
 import PresentationPages from "./Sections/Articles.vue";
 
 //images
-import vueMkHeader from "../../assets/img/bg/bk.png";
+import vueMkHeader from "../../assets/img/bg/966316.jpg";
 import logo from "../../assets/img/icon/logo.png";
 import MaterialInput from "../../components/MaterialInput.vue";
 

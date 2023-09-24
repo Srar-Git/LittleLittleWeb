@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ChatGPT-bot-infrastructure" />
         <module name="Web" />
-        <module name="ChatGPT-bot-domain" />
-        <module name="ChatGPT-bot-application" />
         <module name="Admin" />
         <module name="Framework" />
-        <module name="ChatGPT-bot-interfaces" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ChatGPT-bot" target="1.8" />
+      <module name="ChatGPT-bot-application" target="1.8" />
+      <module name="ChatGPT-bot-domain" target="1.8" />
+      <module name="ChatGPT-bot-infrastructure" target="1.8" />
+      <module name="ChatGPT-bot-interfaces" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -24,6 +27,7 @@
       <module name="ChatGPT-bot-infrastructure" options="-parameters" />
       <module name="ChatGPT-bot-interfaces" options="-parameters" />
       <module name="Framework" options="-parameters" />
+      <module name="LittleLittleWeb" options="-parameters" />
       <module name="Web" options="-parameters" />
     </option>
   </component>
