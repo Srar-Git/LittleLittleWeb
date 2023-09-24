@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Web" />
         <module name="Admin" />
+        <module name="Web" />
         <module name="Framework" />
       </profile>
     </annotationProcessing>
@@ -27,7 +27,7 @@
       <module name="ChatGPT-bot-infrastructure" options="-parameters" />
       <module name="ChatGPT-bot-interfaces" options="-parameters" />
       <module name="Framework" options="-parameters" />
-      <module name="LittleLittleWeb" options="-parameters" />
+      <module name="LittleLittleWeb" options="" />
       <module name="Web" options="-parameters" />
     </option>
   </component>
