@@ -16,7 +16,7 @@ CREATE TABLE `web_article`  (
                                 `is_delete` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否已经被删除 (0否 1是)',
                                 `is_recommend` tinyint(1) NOT NULL DEFAULT 0 COMMENT '是否推荐 (0否 1是)',
                                 `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态 (1公开 2私密 3评论可见)',
-                                `views` int NOT NULL DEFAULT 0 COMMENT '查看数量'
+                                `views` int NOT NULL DEFAULT 0 COMMENT '查看数量',
                                 `create_time` datetime NOT NULL COMMENT '发表时间',
                                 `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
                                 PRIMARY KEY (`id`) USING BTREE
