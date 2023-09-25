@@ -31,6 +31,8 @@ public class Article {
     private String articleCover;
     //文章标题
     private String articleTitle;
+    //文章简介
+    private String articleSummary;
     //文章内容
     private String articleContent;
     //类型 (1原创 2转载 3翻译)
@@ -43,6 +45,8 @@ public class Article {
     private Integer isRecommend;
     //状态 (1公开 2私密 3评论可见)
     private Integer status;
+    //查看数量
+    private Integer views;
     //发表时间
     private Date createTime;
     //更新时间

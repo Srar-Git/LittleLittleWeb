@@ -2,6 +2,7 @@ package cn.littlelittleweb.Controller;
 
 
 import cn.littlelittleweb.Domain.Entity.Article;
+import cn.littlelittleweb.Domain.ResponseResult;
 import cn.littlelittleweb.Service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +18,11 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @GetMapping("/list")
-    public List<Article> test(){
-        return articleService.list();
+    @GetMapping("/hottestArticleList")
+    public ResponseResult hottestArticleList(){
+
+        ResponseResult responseResult = articleService.hottestArticleList();
+        return responseResult;
     }
 
 
