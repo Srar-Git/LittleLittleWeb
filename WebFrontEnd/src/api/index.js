@@ -3,7 +3,7 @@ import request from "../utils/request/"
 // portal/findAllTypes
 //获取分类列表
 export const getfindAllTypes = () => {
-  return request.get("portal/findAllTypes");
+  return request.get("article/articleTypeList");
 };
 // 分页带条件查询所有头条
 export const getfindNewsPageInfo = (info) => {
