@@ -24,5 +24,11 @@ public class ArticleController {
         return responseResult;
     }
 
+    @GetMapping("/articleTypeList")
+    public ResponseResult getArticleTypeList(){
+        ResponseResult responseResult = articleService.getArticleTypeList();
+        return responseResult;
+    }
+
 
 }

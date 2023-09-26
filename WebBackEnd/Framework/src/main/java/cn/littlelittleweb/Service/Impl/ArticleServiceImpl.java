@@ -44,8 +44,11 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 //            articleVOs.add(hottestArticleVO);
 //        }
         List<HottestArticleVO> articleVOs = BeanCopyUtils.copyBeanList(articles, HottestArticleVO.class);
-
-
         return ResponseResult.okResult(articleVOs);
+    }
+
+    @Override
+    public ResponseResult getArticleTypeList() {
+        return null;
     }
 }
