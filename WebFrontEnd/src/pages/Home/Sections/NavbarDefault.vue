@@ -3,6 +3,7 @@ import {RouterLink} from "vue-router";
 import {ref, watch} from "vue";
 import {useWindowsWidth} from "../../../assets/js/useWindowsWidth";
 import MaterialInput from "../../../components/MaterialInput.vue";
+import getArticleTypes from "./Data/getArticleTypes.js";
 
 // images
 import ArrDark from "../../../assets/img/down-arrow-dark.svg";
@@ -167,13 +168,6 @@ watch(
 
       </div>
 
-      <!--      <div class="navbar-nav d-lg-block d-none" id="search-button">-->
-      <!--        <button class="btn btn-icon btn-2 btn-outline-primary  " type="button">-->
-      <!--          <span class="btn-inner&#45;&#45;icon"><i class="ni ni-button-play"></i></span>-->
-      <!--          <span class="btn-inner&#45;&#45;text">搜索</span>-->
-      <!--        </button>-->
-      <!--      </div>-->
-
 
 
 
@@ -183,6 +177,499 @@ watch(
           id="navigation"
       >
         <ul class="navbar-nav navbar-nav-hover ms-auto">
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a
+                role="button"
+                class="nav-link ps-2 d-flex cursor-pointer align-items-center"
+                :class="getTextColor()"
+                id="dropdownMenuBlocks"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
+<!--              <svg t="1695717023504" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="947" width="200" height="200"><path d="M337.249467 51.393074H80.69503c-43.842968 0-80.451847 36.608879-80.451847 87.759009v255.896792c0 43.842968 36.608879 80.378776 80.451847 80.378776h256.554437c51.296273 0 80.59799-36.535807 80.59799-80.378776V139.152083c7.307161-51.15013-36.608879-87.759009-80.59799-87.759009z m659.398245 153.596533L820.837409 22.164428c-29.301717-29.228646-87.905152-29.228646-117.279941 0L520.366932 204.989607c-29.301717 29.228646-29.301717 87.685937 0 116.914583l175.956446 182.752106c29.301717 29.228646 87.905152 29.228646 117.206869 0l175.883376-182.752106c43.91604-29.228646 43.91604-87.685937 7.234089-116.914583zM337.249467 599.722466H80.69503c-43.842968 0-80.451847 36.535807-80.451847 87.759009v255.823721A81.109492 81.109492 0 0 0 80.69503 1023.757043h256.554437c51.296273 0 80.59799-36.535807 80.59799-80.451847V687.481475c7.307161-51.223201-36.608879-87.759009-80.59799-87.759009z m549.498538 0H637.646872c-51.296273 0-80.59799 36.535807-80.59799 80.451847v255.823721C549.741721 987.221236 586.350599 1023.757043 637.646872 1023.757043h256.481366c51.223201 0 80.59799-36.535807 80.59799-80.451847V687.481475c0-51.223201-36.608879-87.759009-87.978223-87.759009z" p-id="948"></path></svg>-->
+              <svg
+                  class="material-icons  opacity-6 nav-item dropdown dropdown-hover mx-2"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  p-id="4003"
+                  width="18"
+                  height="18"
+              >
+                <path d="M337.249467 51.393074H80.69503c-43.842968 0-80.451847 36.608879-80.451847 87.759009v255.896792c0 43.842968 36.608879 80.378776 80.451847 80.378776h256.554437c51.296273 0 80.59799-36.535807 80.59799-80.378776V139.152083c7.307161-51.15013-36.608879-87.759009-80.59799-87.759009z m659.398245 153.596533L820.837409 22.164428c-29.301717-29.228646-87.905152-29.228646-117.279941 0L520.366932 204.989607c-29.301717 29.228646-29.301717 87.685937 0 116.914583l175.956446 182.752106c29.301717 29.228646 87.905152 29.228646 117.206869 0l175.883376-182.752106c43.91604-29.228646 43.91604-87.685937 7.234089-116.914583zM337.249467 599.722466H80.69503c-43.842968 0-80.451847 36.535807-80.451847 87.759009v255.823721A81.109492 81.109492 0 0 0 80.69503 1023.757043h256.554437c51.296273 0 80.59799-36.535807 80.59799-80.451847V687.481475c7.307161-51.223201-36.608879-87.759009-80.59799-87.759009z m549.498538 0H637.646872c-51.296273 0-80.59799 36.535807-80.59799 80.451847v255.823721C549.741721 987.221236 586.350599 1023.757043 637.646872 1023.757043h256.481366c51.223201 0 80.59799-36.535807 80.59799-80.451847V687.481475c0-51.223201-36.608879-87.759009-87.978223-87.759009z" p-id="948"></path></svg>
+              选项
+              <img
+                  :src="getArrowColor()"
+                  alt="down-arrow"
+                  class="arrow ms-2 d-lg-block d-none"
+              />
+              <img
+                  :src="getArrowColor()"
+                  alt="down-arrow"
+                  class="arrow ms-1 d-lg-none d-block ms-auto"
+              />
+            </a>
+            <div
+                class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                aria-labelledby="dropdownMenuBlocks"
+            >
+              <div class="d-none d-lg-block">
+                <ul class="list-group">
+                  <li
+                      class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0"
+                  >
+                    <a
+                        class="dropdown-item py-2 ps-3 border-radius-md"
+                        href="javascript:;"
+                    >
+                      <div class="d-flex">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <h6
+                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                            >
+                              文章分类
+                            </h6>
+                            <span class="text-sm">查看所有分类的文章</span>
+                          </div>
+                          <img
+                              :src="downArrow"
+                              alt="down-arrow"
+                              class="arrow"
+                          />
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+
+                      <RouterLink v-for="item in getArticleTypes()" :key="item" class="dropdown-item ps-3 border-radius-md mb-1" :to="{ name: 'home' }">
+                        {{ item }}
+                      </RouterLink>
+
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Page Headers
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Features
+                      </RouterLink>
+                    </div>
+                  </li>
+                  <li
+                      class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0"
+                  >
+                    <a
+                        class="dropdown-item py-2 ps-3 border-radius-md"
+                        href="javascript:;"
+                    >
+                      <div class="d-flex">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <h6
+                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                            >
+                              文章排序
+                            </h6>
+                            <span class="text-sm">按照不同的排序查看文章</span>
+                          </div>
+                          <img
+                              :src="downArrow"
+                              alt="down-arrow"
+                              class="arrow"
+                          />
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        按照浏览数量查看
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        按照发布时间查看
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        按照更新时间查看
+                      </RouterLink>
+                    </div>
+                  </li>
+                  <li
+                      class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0"
+                  >
+                    <a
+                        class="dropdown-item py-2 ps-3 border-radius-md"
+                        href="javascript:;"
+                    >
+                      <div class="d-flex">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <h6
+                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                            >
+                              Input Areas
+                            </h6>
+                            <span class="text-sm">See all input areas</span>
+                          </div>
+                          <img
+                              :src="downArrow"
+                              alt="down-arrow"
+                              class="arrow"
+                          />
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Inputs
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Forms
+                      </RouterLink>
+                    </div>
+                  </li>
+                  <li
+                      class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0"
+                  >
+                    <a
+                        class="dropdown-item py-2 ps-3 border-radius-md"
+                        href="javascript:;"
+                    >
+                      <div class="d-flex">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <h6
+                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                            >
+                              Attention Catchers
+                            </h6>
+                            <span class="text-sm">See all examples</span>
+                          </div>
+                          <img
+                              :src="downArrow"
+                              alt="down-arrow"
+                              class="arrow"
+                          />
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Alerts
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Modals
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Tooltips & Popovers
+                      </RouterLink>
+                    </div>
+                  </li>
+                  <li
+                      class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0"
+                  >
+                    <a
+                        class="dropdown-item py-2 ps-3 border-radius-md"
+                        href="javascript:;"
+                    >
+                      <div class="d-flex">
+                        <div
+                            class="w-100 d-flex align-items-center justify-content-between"
+                        >
+                          <div>
+                            <h6
+                                class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                            >
+                              Elements
+                            </h6>
+                            <span class="text-sm">See all elements</span>
+                          </div>
+                          <img
+                              :src="downArrow"
+                              alt="down-arrow"
+                              class="arrow"
+                          />
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Avatars
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Badges
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Breadcrumbs
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Buttons
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Button Groups
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Dropdowns
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Progress Bars
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Toggles
+                      </RouterLink>
+                      <RouterLink
+                          class="dropdown-item ps-3 border-radius-md mb-1"
+                          :to="{ name: 'home' }"
+                      >
+                        Typography
+                      </RouterLink>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="row d-lg-none">
+                <div class="col-md-12">
+                  <div class="d-flex mb-2">
+                    <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <h6
+                            class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                        >
+                          Page Sections
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Page Headers
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Features
+                  </RouterLink>
+                  <div class="d-flex mb-2 mt-3">
+                    <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <h6
+                            class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                        >
+                          Navigation
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Navbars
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Nav Tabs
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Pagination
+                  </RouterLink>
+                  <div class="d-flex mb-2 mt-3">
+                    <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <h6
+                            class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                        >
+                          Input Areas
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Inputs
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Forms
+                  </RouterLink>
+                  <div class="d-flex mb-2 mt-3">
+                    <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <h6
+                            class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                        >
+                          Attention Catchers
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Alerts
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Modals
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Tooltips & Popovers
+                  </RouterLink>
+                  <div class="d-flex mb-2 mt-3">
+                    <div
+                        class="w-100 d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <h6
+                            class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
+                        >
+                          Elements
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Avatars
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Badges
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Breadcrumbs
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Buttons
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Button Groups
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Dropdowns
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Progress Bars
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Toggles
+                  </RouterLink>
+                  <RouterLink
+                      class="dropdown-item ps-3 border-radius-md mb-1"
+                      :to="{ name: 'home' }"
+                  >
+                    Typography
+                  </RouterLink>
+                </div>
+              </div>
+            </div>
+          </li>
           <li class="nav-item dropdown dropdown-hover mx-2">
             <a
                 href="https://github.com/AnLan1214090013/LittleLittleWeb"

@@ -19,8 +19,7 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping("/hottestArticleList")
-    public ResponseResult hottestArticleList(){
-
+    public ResponseResult gethottestArticleList(){
         ResponseResult responseResult = articleService.hottestArticleList();
         return responseResult;
     }
