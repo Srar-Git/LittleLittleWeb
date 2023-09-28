@@ -2,11 +2,11 @@
 import { onMounted, onUnmounted } from "vue";
 
 //example components
-import NavbarDefault from "../Home/Sections/NavbarDefault.vue";
+import NavbarDefault from "./Components/NavbarDefault.vue";
 import Header from "../Home/Sections/Header.vue";
 
 // sections
-import PresentationPages from "./Sections/Articles.vue";
+import Articles from "./Sections/Articles.vue";
 
 //images
 import vueMkHeader from "../../assets/img/bg/966316.jpg";
@@ -76,6 +76,6 @@ onUnmounted(() => {
   </Header>
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
-    <PresentationPages />
+    <Articles />
   </div>
 </template>

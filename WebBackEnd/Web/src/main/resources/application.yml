@@ -1,6 +1,8 @@
 server:
   port: 7778
 spring:
+  main:
+    allow-circular-references: true
   datasource:
     url: jdbc:mysql://123.56.66.208:3306/littlelittleweb?characterEncoding=utf-8
     username: root

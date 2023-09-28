@@ -225,9 +225,15 @@ p {
 .text-black-50 {
   color: rgba($black, .5) !important;
 }
+.text-black-90 {
+  color: rgba($black, .9) !important;
+}
 
 .text-white-50 {
   color: rgba($white, .5) !important;
+}
+.text-gray {
+  color: rgb(164, 164, 164) !important;
 }
 
 .text-decoration-none {

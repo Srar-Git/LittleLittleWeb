@@ -1,4 +1,4 @@
-package cn.littlelittleweb.Domain.VO;
+package cn.littlelittleweb.Domain.VO.ArticleVO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -6,6 +6,11 @@ export const staticRoutes = [
     component: () => import("../pages/Home/HomeView.vue"),
   },
   {
+    path: "/category",
+    name: "category",
+    component: () => import("../pages/CategoryPage/ArticleCategoryView.vue"),
+  },
+  {
     // 头条
     path: "/headlinenews",
     component: () => import("../pages/HeadlineNews/index.vue"),
