@@ -37,13 +37,13 @@ import CommonArticleCard from "../Components/CommonArticleCard.vue";
         <CommonArticleCard
             class="shadow-lg"
             title="Contact Us Page"
-            image=""
+            image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/contact.jpg"
             route="home"
         />
       </div>
       <div class="col col-lg-4">
         <CommonArticleCard
-            classes="shadow-lg"
+            class="shadow-lg"
             title="Sign In Page"
             image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/contact.jpg"
             route="home"
@@ -51,7 +51,7 @@ import CommonArticleCard from "../Components/CommonArticleCard.vue";
       </div>
       <div class="col col-lg-4">
         <CommonArticleCard
-            classes="shadow-lg"
+            class="shadow-lg"
             title="Author Page"
             image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/author.jpg"
             route="home"

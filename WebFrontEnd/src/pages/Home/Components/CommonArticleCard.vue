@@ -71,7 +71,7 @@ export default {
       v-bind="$attrs"
       :data-bs-toggle="pro ? 'tooltip' : null"
       :data-bs-placement="pro ? 'top' : null"
-      :title="pro ? 'Pro Element' : null"
+      :title="pro ? title : null"
     >
       <img
         class="w-100"
