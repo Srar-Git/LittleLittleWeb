@@ -20,10 +20,32 @@ import CommonArticleCard from "../Components/CommonArticleCard.vue";
       category="SDN"
   />
 
+<!--  //第二层-->
   <div class="container">
     <div class="row">
+      <div class="col col-lg-6">
+        <CommonArticleCard
+            class="shadow-lg"
+            title="About Us Page"
+            subtitle="让我们来开始写文章吧！"
+            image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"
+            route="home"
+        />
+      </div>
+      <div class="col col-lg-6">
+        <CommonArticleCard
+            class="shadow-lg"
+            title="Contact Us Page"
+            image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/contact.jpg"
+            route="home"
+        />
+      </div>
+    </div>
+  </div>
 
-
+<!--  //普通文章-->
+  <div class="container  mt-5">
+    <div class="row">
       <div class="col col-lg-4">
         <CommonArticleCard
             class="shadow-lg"

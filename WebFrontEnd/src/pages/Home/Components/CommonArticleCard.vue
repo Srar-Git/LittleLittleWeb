@@ -8,7 +8,7 @@ import setTooltip from "../../../assets/js/tooltip.js";
 import { useAppStore } from "../../../stores/index.js";
 const store = useAppStore();
 
-defineProps({
+const props = defineProps({
   route: {
     type: String,
     required: true,
@@ -16,6 +16,10 @@ defineProps({
   author: {
     type: String,
     default: ""
+  },
+  badgeColor: {
+    type: class{},
+    default: "bg-gradient-primary"
   },
   image: {
     type: String,
@@ -117,8 +121,11 @@ export default {
 <!--    mt上下移动  ms左右移动-->
     <div class="ms-2 my-3">
       <p class="text-gray text-sm font-weight-bolder">
-        作者: &nbsp;{{author}} &nbsp; •  &nbsp;分类: &nbsp;{{ category }}
+        作者: &nbsp;{{author}} &nbsp;
+        <span class="badge {{badgeColor}}" >{{category}}</span>
+<!--        <span class="badge bg-gradient-success">Success</span>-->
       </p>
+
     </div>
 
 <!--    文章标题-->
