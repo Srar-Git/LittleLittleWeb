@@ -18,6 +18,7 @@ import CommonArticleCard from "../Components/CommonArticleCard.vue";
       image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"
       route="home"
       category="SDN"
+      views=1500
   />
 
 <!--  //第二层-->

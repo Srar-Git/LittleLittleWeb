@@ -10,6 +10,24 @@ import profilePic from "../../../assets/img/bruce-mars.jpg";
 
 // material-input
 import setMaterialInput from "../../../assets/js/material-input";
+import MaterialBadge from "../../../components/MaterialBadge.vue";
+
+const props = defineProps({
+  route: {
+    type: String,
+    required: true,
+  },
+  badgeColor: {
+    type: String,
+    default: "bg-gradient-success"
+  },
+  category: {
+    type: String,
+    default: "未分类",
+  }
+});
+
+
 onMounted(() => {
   setMaterialInput();
 });
@@ -19,15 +37,9 @@ onMounted(() => {
     <div class="container">
       <div class="row">
         <div class="col-12 mx-auto">
-          <div class="mt-n8 mt-md-n9 text-center">
-            <div class="blur-shadow-avatar">
-              <MaterialAvatar
-                size="xxl"
-                class="shadow-xl position-relative z-index-2"
-                :image="profilePic"
-                alt="Avatar"
-              />
-            </div>
+          <div class="mt-n9 mt-md-n8 text-center">
+<!--            <span :class="''+props.badgeColor" class="badge-lg" >{{category}}</span>-->
+            <MaterialBadge size="lg">{{category}}</MaterialBadge>
           </div>
           <div class="row py-7">
             <div

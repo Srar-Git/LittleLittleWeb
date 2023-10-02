@@ -6,6 +6,7 @@ import setTooltip from "../../../assets/js/tooltip.js";
 
 // store
 import { useAppStore } from "../../../stores/index.js";
+import MaterialBadge from "../../../components/MaterialBadge.vue";
 const store = useAppStore();
 
 const props =defineProps({
@@ -15,7 +16,7 @@ const props =defineProps({
   },
   badgeColor: {
     type: String,
-    default: "bg-gradient-success"
+    default: "success"
   },
   author: {
     type: String,
@@ -90,7 +91,9 @@ const props =defineProps({
             <!--    文章分类-->
             <h6 class="text-gray  font-weight-bolder">
               作者: &nbsp;{{author}} &nbsp;
-              <span :class="''+props.badgeColor" class="badge" >{{category}}</span>
+              <MaterialBadge variant="gradient" :color="''+props.badgeColor">
+                {{category}}
+              </MaterialBadge>
             </h6>
 
             <!--    文章标题-->

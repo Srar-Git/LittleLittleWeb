@@ -18639,6 +18639,7 @@ body.dark-version {
   width: 23px;
   transition: all 0.2s ease-in-out;
 }
+
 .fixed-plugin .badge:hover, .fixed-plugin .badge.active {
   border-color: #344767;
 }
