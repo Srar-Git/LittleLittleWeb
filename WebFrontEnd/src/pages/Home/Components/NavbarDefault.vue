@@ -9,7 +9,6 @@ import {getAllTypes} from "../../../api/index.js"
 import ArrDark from "../../../assets/img/down-arrow-dark.svg";
 import downArrow from "../../../assets/img/down-arrow.svg";
 import DownArrWhite from "../../../assets/img/down-arrow-white.svg";
-import LLB from "../../../assets/img/icon/LLB.png"
 
 onMounted(() => {
   getArticleTypes()
@@ -141,7 +140,7 @@ watch(
       >
 
 
-                <img src="../../../assets/img/icon/LLB.png" width="51.15" height="21.3">
+                <img src="../../../assets/img/icon/LLW.png" width="51.15" height="21.3">
 
 
 
