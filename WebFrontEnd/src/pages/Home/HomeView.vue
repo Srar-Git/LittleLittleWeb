@@ -76,6 +76,6 @@ onUnmounted(() => {
   </Header>
 
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
-    <Articles1 />
+    <Articles />
   </div>
 </template>

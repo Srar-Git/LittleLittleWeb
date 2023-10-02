@@ -8,10 +8,14 @@ import setTooltip from "../../../assets/js/tooltip.js";
 import { useAppStore } from "../../../stores/index.js";
 const store = useAppStore();
 
-defineProps({
+const props =defineProps({
   route: {
     type: String,
     required: true,
+  },
+  badgeColor: {
+    type: String,
+    default: "bg-gradient-success"
   },
   author: {
     type: String,
@@ -85,7 +89,8 @@ defineProps({
           <div class="row mt-3">
             <!--    文章分类-->
             <h6 class="text-gray  font-weight-bolder">
-              作者: &nbsp;{{author}} &nbsp; •  &nbsp;分类: &nbsp;{{ category }}
+              作者: &nbsp;{{author}} &nbsp;
+              <span :class="''+props.badgeColor" class="badge" >{{category}}</span>
             </h6>
 
             <!--    文章标题-->

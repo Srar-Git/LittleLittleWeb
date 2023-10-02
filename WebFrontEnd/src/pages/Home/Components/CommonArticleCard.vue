@@ -18,8 +18,8 @@ const props = defineProps({
     default: ""
   },
   badgeColor: {
-    type: class{},
-    default: "bg-gradient-primary"
+    type: String,
+    default: "bg-gradient-success"
   },
   image: {
     type: String,
@@ -122,8 +122,8 @@ export default {
     <div class="ms-2 my-3">
       <p class="text-gray text-sm font-weight-bolder">
         作者: &nbsp;{{author}} &nbsp;
-<!--        <span class="badge {{badgeColor}}" >{{category}}</span>-->
-        <span class="badge bg-gradient-success">Success</span>
+        <span :class="''+props.badgeColor" class="badge" >{{category}}</span>
+<!--        <span class="badge bg-gradient-success">Success</span>-->
       </p>
 
     </div>
