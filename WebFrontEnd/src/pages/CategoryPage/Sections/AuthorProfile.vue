@@ -12,11 +12,39 @@ import profilePic from "../../../assets/img/bruce-mars.jpg";
 import setMaterialInput from "../../../assets/js/material-input";
 import MaterialBadge from "../../../components/MaterialBadge.vue";
 import CommonArticleCard from "../../Home/Components/CommonArticleCard.vue";
-import {getAllTypes} from "../../../api/index.js"
+import {getAllArticlesByType, getAllTypes} from "../../../api/index.js"
+
 const allArticleList = ref([])//所有文章
+const categoryInfo = ref(
+    {
+      pageNum: 1,        // 页码数
+      pageSize: 5,// 页大小
+      categoryId: 1,
+    }
+)
 onMounted(() => {
-  getArticleTypes()
+  getAllArticlesByType(categoryInfo)
 })
+
+async function getArticlesByType() {
+  // var articleTypes = ["aaa", "bbb"];
+  let articles = await getAllTypes()
+  articleTypes.forEach((item) => {
+    item.id = item.id
+    console.log(item.id+"  ppppp")
+    item.author = item.author
+    item.badgeColor = item.badgeColor
+    item.image = item.image
+    item.title = item.title
+    item.category = item.category
+    item.subtitle = item.subtitle
+    item.createYear = item.createYear
+    item.createMonth = item.createMonth
+    item.createDay = item.createDay
+    item.views = item.views
+  })
+  allArticleList.value = articles
+}
 
 const props = defineProps({
   route: {
@@ -40,8 +68,8 @@ const props = defineProps({
     default: "该分类没有描述",
   },
   article: {
-    route: {
-      type: String,
+    id: {
+      type: Number,
       required: true,
     },
     author: {
@@ -101,25 +129,25 @@ onMounted(() => {
           </div>
           <div class="row py-5">
             <div
-              class=""
+                class=""
             >
               <div
-                class="d-flex mb-2 " style="margin-right: 1px;margin-left: 1.3rem;margin-top: 1rem"
+                  class="d-flex mb-2 " style="margin-right: 1px;margin-left: 1.3rem;margin-top: 1rem"
               >
-                <h1 class="mb-0 text-bolder">分类：{{category}}</h1>
+                <h1 class="mb-0 text-bolder">分类：{{ category }}</h1>
                 <div class="col-auto" style="margin-top: 2.1rem;margin-left: 2rem;margin-right: 3rem">
                   <span class="h6 me-1">323</span>
                   <span>篇文章</span>
                 </div>
               </div>
               <p class=" h6" style="font-weight: inherit;margin-top: 2.1rem;margin-left: 1.3rem;margin-right: 3rem">
-                {{description}}
+                {{ description }}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="container  mb-n7" >
+      <div class="container  mb-n7">
         <div class="row">
 
 
@@ -133,16 +161,16 @@ onMounted(() => {
             />
           </div>
 
-          <div class="col col-lg-4">
-            <CommonArticleCard
-                v-for=""
-                class="shadow-lg"
-                title="About Us Page"
-                subtitle="让我们来开始写文章吧！"
-                image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"
-                route="home"
-            />
-          </div>
+          <!--          <div class="col col-lg-4">-->
+          <!--            <CommonArticleCard-->
+          <!--                v-for=""-->
+          <!--                class="shadow-lg"-->
+          <!--                title="About Us Page"-->
+          <!--                subtitle="让我们来开始写文章吧！"-->
+          <!--                image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"-->
+          <!--                route="home"-->
+          <!--            />-->
+          <!--          </div>-->
 
         </div>
       </div>
