@@ -8580,6 +8580,12 @@ textarea.form-control-lg {
   margin-right: auto !important;
 }
 
+
+
+.mb-neg-1 {
+  margin-bottom: -1rem !important;
+}
+
 .mb-0 {
   margin-bottom: 0 !important;
 }

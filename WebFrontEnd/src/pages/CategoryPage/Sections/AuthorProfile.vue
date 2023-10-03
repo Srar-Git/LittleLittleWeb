@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import {onMounted, ref} from "vue";
 
 //Vue Material Kit 2 components
 import MaterialAvatar from "../../../components/MaterialAvatar.vue";
@@ -11,6 +11,12 @@ import profilePic from "../../../assets/img/bruce-mars.jpg";
 // material-input
 import setMaterialInput from "../../../assets/js/material-input";
 import MaterialBadge from "../../../components/MaterialBadge.vue";
+import CommonArticleCard from "../../Home/Components/CommonArticleCard.vue";
+import {getAllTypes} from "../../../api/index.js"
+const allArticleList = ref([])//所有文章
+onMounted(() => {
+  getArticleTypes()
+})
 
 const props = defineProps({
   route: {
@@ -19,11 +25,65 @@ const props = defineProps({
   },
   badgeColor: {
     type: String,
-    default: "bg-gradient-success"
+    default: "info"
   },
   category: {
     type: String,
     default: "未分类",
+  },
+  categoryId: {
+    type: Number,
+    default: 0,
+  },
+  description: {
+    type: String,
+    default: "该分类没有描述",
+  },
+  article: {
+    route: {
+      type: String,
+      required: true,
+    },
+    author: {
+      type: String,
+      default: ""
+    },
+    badgeColor: {
+      type: String,
+      default: "success"
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      default: "",
+    },
+    category: {
+      type: String,
+      default: "未分类",
+    },
+    subtitle: {
+      type: String,
+      default: "",
+    },
+    createYear: {
+      day: Number,
+      default: 2017,
+    },
+    createMonth: {
+      day: Number,
+      default: 12,
+    },
+    createDay: {
+      day: Number,
+      default: 31,
+    },
+    views: {
+      day: Number,
+      default: 0,
+    },
   }
 });
 
@@ -33,60 +93,57 @@ onMounted(() => {
 });
 </script>
 <template>
-  <section class="py-sm-7 py-5 position-relative">
+  <section class="py-sm-6 py-4 position-relative">
     <div class="container">
       <div class="row">
-        <div class="col-12 mx-auto">
-          <div class="mt-n9 mt-md-n8 text-center">
-<!--            <span :class="''+props.badgeColor" class="badge-lg" >{{category}}</span>-->
-            <MaterialBadge size="lg">{{category}}</MaterialBadge>
+        <div class="col-12 ">
+          <div class="mt-n9 mt-md-n6 ">
           </div>
-          <div class="row py-7">
+          <div class="row py-5">
             <div
-              class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto"
+              class=""
             >
               <div
-                class="d-flex justify-content-between align-items-center mb-2"
+                class="d-flex mb-2 " style="margin-right: 1px;margin-left: 1.3rem;margin-top: 1rem"
               >
-                <h3 class="mb-0">Michael Roven</h3>
-                <div class="d-block">
-                  <MaterialButton
-                    class="text-nowrap mb-0"
-                    variant="outline"
-                    color="success"
-                    size="sm"
-                    >Follow</MaterialButton
-                  >
-                </div>
-              </div>
-              <div class="row mb-4">
-                <div class="col-auto">
+                <h1 class="mb-0 text-bolder">分类：{{category}}</h1>
+                <div class="col-auto" style="margin-top: 2.1rem;margin-left: 2rem;margin-right: 3rem">
                   <span class="h6 me-1">323</span>
-                  <span>Posts</span>
-                </div>
-                <div class="col-auto">
-                  <span class="h6 me-1">3.5k</span>
-                  <span>Followers</span>
-                </div>
-                <div class="col-auto">
-                  <span class="h6 me-1">260</span>
-                  <span>Following</span>
+                  <span>篇文章</span>
                 </div>
               </div>
-              <p class="text-lg mb-0">
-                Decisions: If you can’t decide, the answer is no. If two equally
-                difficult paths, choose the one more painful in the short term
-                (pain avoidance is creating an illusion of equality). Choose the
-                path that leaves you more equanimous.
-                <br /><a
-                  href="javascript:;"
-                  class="text-success icon-move-right"
-                  >More about me
-                  <i class="fas fa-arrow-right text-sm ms-1"></i>
-                </a>
+              <p class=" h6" style="font-weight: inherit;margin-top: 2.1rem;margin-left: 1.3rem;margin-right: 3rem">
+                {{description}}
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="container  mb-n7" >
+        <div class="row">
+
+
+          <div class="col col-lg-4">
+            <CommonArticleCard
+                class="shadow-lg"
+                title="About Us Page"
+                subtitle="让我们来开始写文章吧！"
+                image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"
+                route="home"
+            />
+          </div>
+
+          <div class="col col-lg-4">
+            <CommonArticleCard
+                v-for=""
+                class="shadow-lg"
+                title="About Us Page"
+                subtitle="让我们来开始写文章吧！"
+                image="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages/about-us.jpg"
+                route="home"
+            />
+          </div>
+
         </div>
       </div>
     </div>

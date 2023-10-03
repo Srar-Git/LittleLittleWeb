@@ -5,6 +5,10 @@ import request from "../utils/request.js"
 export const getAllTypes = () => {
   return request.get("category/categoryList");
 };
+//获取分类的文章列表
+export const getAllArticlesByType = (type) => {
+  return request.get("category/articles",type);
+};
 // 分页带条件查询所有头条
 export const getfindNewsPageInfo = (info) => {
   return request.post("portal/findNewsPage",info);
