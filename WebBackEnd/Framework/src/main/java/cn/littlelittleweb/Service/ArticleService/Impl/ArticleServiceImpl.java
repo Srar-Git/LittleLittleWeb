@@ -3,6 +3,7 @@ package cn.littlelittleweb.Service.ArticleService.Impl;
 import cn.littlelittleweb.Domain.Entity.ArticleEntity.Article;
 import cn.littlelittleweb.Domain.Entity.ArticleEntity.Category;
 import cn.littlelittleweb.Domain.ResponseResult;
+import cn.littlelittleweb.Domain.VO.ArticleVO.ArticleDetailVO;
 import cn.littlelittleweb.Domain.VO.ArticleVO.ArticleListVO;
 import cn.littlelittleweb.Domain.VO.ArticleVO.HottestArticleVO;
 import cn.littlelittleweb.Domain.VO.ArticleVO.PageVO;
@@ -79,6 +80,23 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
         List<ArticleListVO> articleVOs = BeanCopyUtils.copyBeanList(articles, ArticleListVO.class);
         PageVO pageVO = new PageVO(articleVOs, page.getTotal());
         return ResponseResult.okResult(pageVO);
+    }
+
+    @Override
+    public ResponseResult articleDetail(Integer id) {
+        //根据id查询文章
+        Article article = getById(id);
+        //转换成VO
+        ArticleDetailVO articleDetailVo = BeanCopyUtils.copyBean(article, ArticleDetailVO.class);
+        //根据分类id查询分类名
+        Integer categoryId = articleDetailVo.getCategoryId();
+        Category category = categoryService.getById(categoryId);
+        if(category!=null){
+            articleDetailVo.setCategoryName(category.getCategoryName());
+            articleDetailVo.setCategoryBadgeColor(category.getCategoryBadgeColor());
+        }
+        //封装响应返回
+        return ResponseResult.okResult(articleDetailVo);
     }
 
 

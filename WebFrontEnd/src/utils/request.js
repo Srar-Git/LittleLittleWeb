@@ -44,12 +44,15 @@ service.interceptors.request.use((config) => {
         }
       }
     }
-    console.log("3: "+url)
+
     url = url.slice(0, -1)
     config.params = {}
     // config.url = "/article/articleList?pageNum=1&pageSize=10&categoryId=2"
+
     config.url = url
   }
+  // console.log("3: "+config.url)
+
   return config
 }, error => {
   console.log(error)

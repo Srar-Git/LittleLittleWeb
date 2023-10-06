@@ -280,7 +280,7 @@ watch(
                       </RouterLink>
                       <RouterLink v-for="item in allTypeList" :key="item.categoryName"
                                   class="dropdown-item ps-3 border-radius-md mb-1"
-                                  :to="{path:'/category',query: {categoryId: item.id}}"
+                                  :to="{path:'/article/category',query: {categoryId: item.id}}"
 
                       >
                         {{ item.categoryName }}

@@ -19,10 +19,16 @@ export function getAllArticleListByCategory(categoryInfo) {
         params: categoryInfo
     })
 }
-// 分页带条件查询所有头条
-export const getfindNewsPageInfo = (info) => {
-  return request.post("portal/findNewsPage",info);
-};
+//获取文章详情
+export function getArticleDetail(articleId) {
+    return request({
+        url: '/article/articleDetail/' + articleId,
+        headers: {
+            isToken: false
+        },
+        method: 'get'
+    })
+}
 // 查看头条详情
 export const getshowHeadlineDetail = (id) => {
     return request({
