@@ -1,7 +1,7 @@
 <template>
   <div >
     <Header v-show="isHeader"></Header>
-    <router-view></router-view>
+    <router-view :key="route.path"></router-view>
   </div>
 </template>
 
@@ -17,6 +17,7 @@
 import { computed } from "vue"
 import { useRoute } from 'vue-router'
 const route = useRoute() // 路由信息对象
+
 // 判断是否显示header组件
  const isHeader =  computed(() => {
     return route.name !== "Login" && route.name !== "Register" && route.name !== "addNews";

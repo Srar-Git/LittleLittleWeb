@@ -1,17 +1,16 @@
 <script setup>
-import {onMounted, onUnmounted, watch} from "vue";
-import { useRoute } from 'vue-router'
+import { onMounted, onUnmounted } from "vue";
+
 //example components
 import NavbarDefault from "../Home/Components/NavbarDefault.vue";
 import Header from "../Home/Sections/Header.vue";
-import ArticleList from "./Sections/ArticleList.vue";
+import Profile from "./Sections/AuthorProfile.vue";
 
 // sections
 import PresentationPages from "./Sections/Articles.vue";
 
 //images
 import vueMkHeader from "../../assets/img/bg/966316.jpg";
-import logo from "../../assets/img/icon/logo.png";
 
 
 //hooks
@@ -24,12 +23,6 @@ onUnmounted(() => {
   body.classList.remove("presentation-page");
   body.classList.remove("bg-gray-200");
 });
-const route = useRoute()
-watch(route, (newValue, oldValue) => {
-  console.log('watch 已触发', newValue, oldValue)
-  // 执行onMounted代码
-  location.reload()
-})
 </script>
 
 <template>
@@ -49,13 +42,8 @@ watch(route, (newValue, oldValue) => {
     </div>
   </Header>
 
-
-
   <div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4">
-    <div class="mt-n8 mt-md-n7 text-center">
-      <img src="../../assets/img/icon/LLW.png" height="142" width="341" alt="">
-    </div>
-    <ArticleList />
+    <Profile />
   </div>
 
 </template>

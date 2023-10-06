@@ -19,6 +19,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService  {
@@ -64,10 +66,14 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
 
         //找出分类name
         List<Article> articles = page.getRecords();
-        for (Article article: articles){
-            Category category = categoryService.getById(article.getCategoryId());
-            article.setCategoryName(category.getCategoryName());
-        }
+//        for (Article article: articles){
+//            Category category = categoryService.getById(article.getCategoryId());
+//            article.setCategoryName(category.getCategoryName());
+//        }
+        articles.stream()
+                .map(article -> article.setCategoryName(categoryService.getById(article.getCategoryId()).getCategoryName()))
+                .map(article -> article.setCategoryBadgeColor(categoryService.getById(article.getCategoryId()).getCategoryBadgeColor()))
+                .collect(Collectors.toList());
 
 
         List<ArticleListVO> articleVOs = BeanCopyUtils.copyBeanList(articles, ArticleListVO.class);

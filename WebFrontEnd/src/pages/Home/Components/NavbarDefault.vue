@@ -1,5 +1,5 @@
 <script setup>
-import {RouterLink} from "vue-router";
+import {RouterLink , useRoute} from "vue-router";
 import {ref, onMounted, getCurrentInstance, watch, onUpdated} from "vue"
 import {useWindowsWidth} from "../../../assets/js/useWindowsWidth.js";
 import MaterialInput from "../../../components/MaterialInput.vue";
@@ -279,7 +279,10 @@ watch(
                         所有文章(发布时间排序)
                       </RouterLink>
                       <RouterLink v-for="item in allTypeList" :key="item.categoryName"
-                                  class="dropdown-item ps-3 border-radius-md mb-1" :to="{ name: 'home' }">
+                                  class="dropdown-item ps-3 border-radius-md mb-1"
+                                  :to="{path:'/category',query: {categoryId: item.id}}"
+
+                      >
                         {{ item.categoryName }}
                       </RouterLink>
 

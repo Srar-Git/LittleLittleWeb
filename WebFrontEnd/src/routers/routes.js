@@ -11,17 +11,22 @@ export const staticRoutes = [
     component: () => import("../pages/CategoryPage/ArticleCategoryView.vue"),
   },
   {
+    path: "/detail",
+    name: "detail",
+    component: () => import("../pages/Article/ArticleView.vue"),
+  },
+  {
     // 头条
     path: "/headlinenews",
     component: () => import("../pages/HeadlineNews/index.vue"),
     name: "HeadlineNews",
   },
-  {
-    //头条详情
-    path: "/detail",
-    component: () => import("../pages/Detail/index.vue"),
-    name: "Detail",
-  },
+  // {
+  //   //头条详情
+  //   path: "/detail",
+  //   component: () => import("../pages/Detail/index.vue"),
+  //   name: "Detail",
+  // },
   {
     // 登录
     path: "/login",

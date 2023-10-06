@@ -21,6 +21,8 @@ public class ArticleListVO {
     private Integer categoryId;
     //分类名字
     private String categoryName;
+    //分类颜色
+    private String categoryBadgeColor;
     //缩略图
     private String articleCover;
     //文章标题

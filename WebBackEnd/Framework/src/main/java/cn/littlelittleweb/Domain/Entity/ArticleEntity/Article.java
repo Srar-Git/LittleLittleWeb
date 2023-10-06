@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -20,6 +21,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("web_article")
+@Accessors(chain = true)
 public class Article {
     //文章id
     @TableId
@@ -29,6 +31,9 @@ public class Article {
     //分类名字
     @TableField(exist = false)
     private String categoryName;
+    //分类颜色
+    @TableField(exist = false)
+    private String categoryBadgeColor;
     //分类ID
     private Integer categoryId;
     //缩略图

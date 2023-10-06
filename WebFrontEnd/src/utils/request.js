@@ -12,15 +12,47 @@ const service = axios.create({
 
 // 添加请求拦截器
 service.interceptors.request.use((config) => {
+
   NProgress.start()//开启进度条
-  // 如果有token, 通过请求头携带给后台
+  // 是否需要设置 token 如果有token, 通过请求头携带给后台
   const userInfoStore = useUserInfoStore(pinia) // 如果不是在组件中调用,必须传入pinia
   const token = userInfoStore.token
-     if (token) {
-      // config.headers['token'] = token  // 报错: headers对象并没有声明有token, 不能随便添加
-      (config.headers)['token'] = token
+  if (token) {
+    // config.headers['token'] = token  // 报错: headers对象并没有声明有token, 不能随便添加
+    (config.headers)['token'] = token
+  }
+  // get请求映射params参数
+  if (config.method === 'get' && config.params) {
+    let url = config.url + '?'
+    console.log("1: "+url)
+    for (const propName of Object.keys(config.params)) {
+      console.log("2: "+url)
+      console.log("propName "+propName)
+      const value = config.params[propName]
+      var part = encodeURIComponent(propName) + '='
+      if (value !== null && typeof (value) !== 'undefined') {
+        if (typeof value === 'object') {
+          for (const key of Object.keys(value)) {
+            if (value[key] !== null && typeof (value[key]) !== 'undefined') {
+              const params = propName + '[' + key + ']'
+              const subPart = encodeURIComponent(params) + '='
+              url += subPart + encodeURIComponent(value[key]) + '&'
+            }
+          }
+        } else {
+          url += part + encodeURIComponent(value) + '&'
+        }
+      }
     }
-  return config;
+    console.log("3: "+url)
+    url = url.slice(0, -1)
+    config.params = {}
+    // config.url = "/article/articleList?pageNum=1&pageSize=10&categoryId=2"
+    config.url = url
+  }
+  return config
+}, error => {
+  console.log(error)
 });
 
 // 添加响应拦截器
