@@ -10,7 +10,6 @@ import pinia from './stores';
 import materialKit from "./material-kit";
 
 
-
 const app = createApp(App)
 app.config.globalProperties.Bus = mitt()
 

@@ -9,8 +9,7 @@ import {useRoute} from "vue-router";
 const articleInfo = ref([])//文章json
 const articleDetail = ref()//文章
 const route = useRoute()
-const articleId = 2;
-var a;
+const articleId = 1;
 
 onMounted(() => {
   getArticle(articleId)
@@ -18,10 +17,7 @@ onMounted(() => {
 
 async function getArticle(id) {
   articleDetail.value = await getArticleDetail(id)
-  console.log("hahaha "+ articleDetail.value.articleTitle)
-  a = articleDetail.value
-  console.log("hahaha2 "+ a.articleTitle)
-  console.log("hahaha3 "+ route.query.id)
+  console.log("hahaha "+ route.query.articleId)
 }
 
 
@@ -29,12 +25,25 @@ async function getArticle(id) {
 </script>
 
 <script>
-import Vue from "vue-markdown/dist/vue-markdown.js";
+import Markdown from 'vue3-markdown-it';
 
-Vue.use(VueMarkdown);
-var vm = new Vue({
-  el: "body"
-});
+export default {
+  components: {
+    Markdown
+  },
+  data() {
+    return {
+      source: '# Hello World!',
+      breaks: true,
+      markdownOptions: {
+        html: true, // 启用 HTML 标签解析
+        linkify: true, // 将 URL 自动转换为链接
+        typographer: true, // 启用智能标点符号替换
+        breaks: true
+      }
+    }
+  }
+}
 </script>
 
 <style>
@@ -66,8 +75,8 @@ var vm = new Vue({
     </div>
 
 
-    <div class="container" v-if="articleDetail">
-
+    <div class="container" v-if="articleDetail" style="margin-top: 10rem">
+      <Markdown :source="articleDetail.articleContent" />
     </div>
 
   </section>

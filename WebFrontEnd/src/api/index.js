@@ -29,17 +29,8 @@ export function getArticleDetail(articleId) {
         method: 'get'
     })
 }
-// 查看头条详情
-export const getshowHeadlineDetail = (id) => {
-    return request({
-        method: "post",
-        url: "portal/showHeadlineDetail",
-        headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
-        },
-         data:`hid=${id}`
-  });
-};
+
+
 
 //删除的回调
 // headline/removeByHid
