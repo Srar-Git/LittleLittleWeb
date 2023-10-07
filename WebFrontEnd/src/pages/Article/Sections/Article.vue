@@ -9,15 +9,17 @@ import {useRoute} from "vue-router";
 const articleInfo = ref([])//文章json
 const articleDetail = ref()//文章
 const route = useRoute()
-const articleId = 1;
+const inputArticleInfo =
+    {
+      articleId: route.query.articleId,
+    }
 
 onMounted(() => {
-  getArticle(articleId)
+  getArticle(inputArticleInfo)
 })
 
-async function getArticle(id) {
-  articleDetail.value = await getArticleDetail(id)
-  console.log("hahaha "+ route.query.articleId)
+async function getArticle(info) {
+  articleDetail.value = await getArticleDetail(info)
 }
 
 

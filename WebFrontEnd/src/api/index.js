@@ -20,13 +20,14 @@ export function getAllArticleListByCategory(categoryInfo) {
     })
 }
 //获取文章详情
-export function getArticleDetail(articleId) {
+export function getArticleDetail(articleInfo) {
     return request({
-        url: '/article/articleDetail/' + articleId,
+        url: '/article/articleDetail',
         headers: {
             isToken: false
         },
-        method: 'get'
+        method: 'get',
+        params: articleInfo
     })
 }
 

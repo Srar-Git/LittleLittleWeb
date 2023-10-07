@@ -68,6 +68,7 @@ onMounted(() => {
                 :views="item.views"
                 :badgeColor="item.categoryBadgeColor"
                 :category="item.categoryName"
+                :article-id="item.id"
             />
           </div>
         </div>

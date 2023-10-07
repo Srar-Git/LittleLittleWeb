@@ -51,7 +51,7 @@ service.interceptors.request.use((config) => {
 
     config.url = url
   }
-  // console.log("3: "+config.url)
+  console.log("3: "+config.url)
 
   return config
 }, error => {
