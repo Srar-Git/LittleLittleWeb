@@ -15,8 +15,11 @@ import cn.littlelittleweb.Utils.BeanCopyUtils;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.netty.util.NetUtil;
+import io.netty.util.internal.ObjectUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -86,6 +89,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
     public ResponseResult articleDetail(Integer id) {
         //根据id查询文章
         Article article = getById(id);
+//        if (article== null){
+//            return null;
+//        }
         //转换成VO
         ArticleDetailVO articleDetailVo = BeanCopyUtils.copyBean(article, ArticleDetailVO.class);
         //根据分类id查询分类名
