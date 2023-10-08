@@ -5,8 +5,9 @@ import {onMounted, ref} from "vue";
 import setMaterialInput from "../../../assets/js/material-input";
 import {getArticleDetail} from "../../../api/index.js"
 import {useRoute} from "vue-router";
+import { mavonEditor } from 'mavon-editor'
 
-const articleInfo = ref([])//文章json
+const aContent = ref()//文章内容
 const articleDetail = ref()//文章
 const route = useRoute()
 const inputArticleInfo =
@@ -20,6 +21,11 @@ onMounted(() => {
 
 async function getArticle(info) {
   articleDetail.value = await getArticleDetail(info)
+  const markdownIt = mavonEditor.getMarkdownIt()
+  console.log(articleDetail.value.articleContent)
+  aContent.value = markdownIt.render(articleDetail.value.articleContent);
+
+
 }
 
 
@@ -77,8 +83,8 @@ export default {
     </div>
 
 
-    <div class="container" v-if="articleDetail" style="margin-top: 10rem">
-      <Markdown :source="articleDetail.articleContent" />
+    <div class="container" v-if="articleDetail" style="margin-top: 10rem" v-html="aContent">
+
     </div>
 
   </section>
