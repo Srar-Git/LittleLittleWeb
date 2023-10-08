@@ -15,4 +15,10 @@ export const staticRoutes = [
     name: "detail",
     component: () => import("../pages/Article/ArticleView.vue"),
   },
+  {
+    path: '/login',
+    component: () => import('../pages/Login/Login.vue'),
+
+    name: 'login'
+  }, //注册登录
 ];
