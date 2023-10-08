@@ -130,7 +130,7 @@ export default {
   <div class="container" style="margin-top: 3rem">
     <div class="row" >
       <div class="col-3 me-4">
-        <div class="position-sticky mulu"  v-if="articleDetail"  style="top: 100px !important;" >目录 (点击跳转)</div>
+        <div class="position-sticky mulu"  v-if="articleDetail"  style="top: 30px !important;" >目录 (点击跳转)</div>
       </div>
       <div class="card card-body blur shadow-secondary col-7" v-if="articleDetail" >a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>br>a<br>a<br>asda<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a</div>
     </div>

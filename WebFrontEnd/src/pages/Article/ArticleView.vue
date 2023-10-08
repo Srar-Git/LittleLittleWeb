@@ -31,26 +31,19 @@ watch(route, (newValue, oldValue) => {
 .header-a{
   background-color: #8643f5;
   padding-bottom: 4rem;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
 }
 </style>
 
 <template>
-
+  <div class="header-a"></div>
   <div class="container">
-
-    <div class="row">
-
-      <div class="col-5">
+      <div class="col-5 ">
         <NavbarDefault :sticky="true"/>
       </div>
-    </div>
   </div>
 
-  <div
-      class=" header-a"
-  >
-  </div>
+
   <Article/>
 
 
