@@ -1,5 +1,5 @@
 <script setup>
-import NavbarDefault from "@/examples/navbars/NavbarDefault.vue";
+import NavbarDefault from "@/examples/navbars/MDRendered.vue";
 </script>
 <template>
   <NavbarDefault dark transparent />

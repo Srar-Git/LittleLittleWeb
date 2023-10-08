@@ -1,5 +1,5 @@
 <script setup>
-import DefaultNavbar from "@/examples/navbars/NavbarDefault.vue";
+import DefaultNavbar from "@/examples/navbars/MDRendered.vue";
 import CenteredFooter from "@/examples/footers/FooterCentered.vue";
 import Breadcrumbs from "@/examples/Breadcrumbs.vue";
 

@@ -8,6 +8,8 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import pinia from './stores';
 import materialKit from "./material-kit";
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 
 const app = createApp(App)
@@ -20,6 +22,7 @@ app.use(ElementPlus, {
 })
 app.use(pinia)
 app.use(router)
-app.use(materialKit);
+app.use(materialKit)
+app.use(mavonEditor)
 app.mount('#app')
 

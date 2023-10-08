@@ -77,9 +77,9 @@ CREATE TABLE `web_category`  (
 DROP TABLE IF EXISTS `web_user`;
 CREATE TABLE `web_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `user_name` varchar(64) NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'NULL' COMMENT '用户名',
-  `nick_name` varchar(64) NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'NULL' COMMENT '昵称',
-  `password` varchar(64) NOT NULL CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT 'NULL' COMMENT '密码',
+  `user_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '用户名',
+  `nick_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '昵称',
+  `password` varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '密码',
   `type` char(1) DEFAULT '0' COMMENT '用户类型：0代表普通用户，1代表管理员',
   `status` char(1) DEFAULT '0' COMMENT '账号状态（0正常 1停用）',
   `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '邮箱',
