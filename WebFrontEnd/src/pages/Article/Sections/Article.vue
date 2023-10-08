@@ -104,7 +104,7 @@ export default {
   background-color: white;
   border: 1px solid #e8e9eb;
   padding-left: 10px;
-  padding-top: 5px;
+  padding-top: 6px;
 }
 </style>
 <template>
@@ -127,12 +127,12 @@ export default {
       </div>
     </div>
 
-  <div class="container" >
+  <div class="container" style="margin-top: 3rem">
     <div class="row" >
-      <div class="col-md-3 mx-auto mt-md-0 mt-3">
-        <div class="position-sticky "  v-if="articleDetail"  style="margin-top: 3rem" >目录 (点击跳转)</div>
+      <div class="col-3 me-4">
+        <div class="position-sticky mulu"  v-if="articleDetail"  style="top: 100px !important;" >目录 (点击跳转)</div>
       </div>
-      <div class="card card-body blur shadow-secondary col-7" style="margin-top: 3rem" v-if="articleDetail" >a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>br>a<br>a<br>asda<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a</div>
+      <div class="card card-body blur shadow-secondary col-7" v-if="articleDetail" >a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>br>a<br>a<br>asda<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a</div>
     </div>
 
 

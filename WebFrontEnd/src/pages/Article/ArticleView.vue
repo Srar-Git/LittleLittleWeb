@@ -37,11 +37,11 @@ watch(route, (newValue, oldValue) => {
 
 <template>
 
-  <div class="container col-9 position-sticky  top-1">
+  <div class="container">
 
     <div class="row">
 
-      <div class="col-3">
+      <div class="col-5">
         <NavbarDefault :sticky="true"/>
       </div>
     </div>
