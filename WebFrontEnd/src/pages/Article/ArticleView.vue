@@ -2,7 +2,7 @@
 import {onMounted, onUnmounted, watch} from "vue";
 import {useRoute} from 'vue-router'
 //example components
-import NavbarDefault from "../Home/Components/NavbarDefault.vue";
+import Navbar from "../../components/NavbarDefaulFixedForDark.vue";
 import Header from "../Home/Sections/Header.vue";
 import Article from "./Sections/Article.vue";
 
@@ -39,7 +39,7 @@ watch(route, (newValue, oldValue) => {
   <div class="header-a"></div>
   <div class="container">
       <div class="col-5 ">
-        <NavbarDefault :sticky="true"/>
+        <Navbar transparent/>
       </div>
   </div>
 

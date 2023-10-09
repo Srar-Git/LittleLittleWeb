@@ -1,14 +1,14 @@
 <script setup>
 import {RouterLink , useRoute} from "vue-router";
 import {ref, onMounted, getCurrentInstance, watch, onUpdated} from "vue"
-import {useWindowsWidth} from "../../../assets/js/useWindowsWidth.js";
-import MaterialInput from "../../../components/MaterialInput.vue";
-import {getAllTypes} from "../../../api/index.js"
+import {useWindowsWidth} from "../assets/js/useWindowsWidth.js";
+import MaterialInput from "./MaterialInput.vue";
+import {getAllTypes} from "../api/index.js"
 
 // images
-import ArrDark from "../../../assets/img/down-arrow-dark.svg";
-import downArrow from "../../../assets/img/down-arrow.svg";
-import DownArrWhite from "../../../assets/img/down-arrow-white.svg";
+import ArrDark from "../assets/img/down-arrow-dark.svg";
+import downArrow from "../assets/img/down-arrow.svg";
+import DownArrWhite from "../assets/img/down-arrow-white.svg";
 
 onMounted(() => {
   getArticleTypes()
@@ -109,14 +109,12 @@ watch(
 </script>
 <template>
   <nav
-      class="navbar navbar-expand-lg top-0"
+      class="navbar navbar-expand-lg top-1"
       :class="{
-      'z-index-3 w-100 shadow-none navbar-transparent position-absolute my-3':
+      'z-index-3 w-70 shadow-none navbar-transparent position-absolute my-3 mx-8':
         props.transparent,
       'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 position-absolute mt-4':
         props.sticky,
-              'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 mt-4':
-        !props.sticky,
       'navbar-light bg-white py-3': props.light,
       ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
     }"
@@ -142,7 +140,7 @@ watch(
       >
 
 
-                <img src="../../../assets/img/icon/LLW.png" width="51.15" height="21.3">
+                <img src="../assets/img/icon/LLW.png" width="51.15" height="21.3">
 
 
 
@@ -160,7 +158,7 @@ watch(
           class=" "
           id="search-btn"
       >
-        <ul class="navbar-nav navbar-nav-hover ms-auto">
+        <ul class="navbar-nav navbar-nav-hover ">
           <li class="nav-item dropdown dropdown-hover ms-2">
             <a
                 href="https://github.com/AnLan1214090013/LittleLittleWeb"

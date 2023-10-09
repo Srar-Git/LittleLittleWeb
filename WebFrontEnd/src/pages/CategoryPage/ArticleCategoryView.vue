@@ -2,7 +2,7 @@
 import {onMounted, onUnmounted, watch} from "vue";
 import { useRoute } from 'vue-router'
 //example components
-import NavbarDefault from "../Home/Components/NavbarDefault.vue";
+import NavbarDefault from "../../components/NavbarDefault.vue";
 import Header from "../Home/Sections/Header.vue";
 import ArticleList from "./Sections/ArticleList.vue";
 

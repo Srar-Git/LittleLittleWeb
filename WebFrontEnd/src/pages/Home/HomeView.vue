@@ -2,7 +2,7 @@
 import { onMounted, onUnmounted } from "vue";
 
 //example components
-import NavbarDefault from "./Components/NavbarDefault.vue";
+import NavbarDefault from "../../components/NavbarDefault.vue";
 import Header from "../Home/Sections/Header.vue";
 
 // sections

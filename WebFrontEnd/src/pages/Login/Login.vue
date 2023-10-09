@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 
 // example components
-import DefaultNavbar from "../Home/Components/NavbarDefault.vue";
+import DefaultNavbar from "../../components/NavbarDefault.vue";
 import Header from "../Home/Sections/Header.vue";
 
 //Vue Material Kit 2 components
