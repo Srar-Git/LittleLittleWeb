@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class ArticleListVO {
-    //文章id
+    //文章id,主键
     @TableId
     private Integer id;
     //作者id
