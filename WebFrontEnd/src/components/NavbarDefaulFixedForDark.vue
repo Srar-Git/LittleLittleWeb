@@ -1,5 +1,5 @@
 <script setup>
-import {RouterLink , useRoute} from "vue-router";
+import {RouterLink, useRoute} from "vue-router";
 import {ref, onMounted, getCurrentInstance, watch, onUpdated} from "vue"
 import {useWindowsWidth} from "../assets/js/useWindowsWidth.js";
 import MaterialInput from "./MaterialInput.vue";
@@ -108,48 +108,18 @@ watch(
 );
 </script>
 <template>
-  <nav
-      class="navbar navbar-expand-lg top-1"
-      :class="{
-      'z-index-3 w-70 shadow-none navbar-transparent position-absolute my-3 mx-8':
-        props.transparent,
-      'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 position-absolute mt-4':
-        props.sticky,
-      'navbar-light bg-white py-3': props.light,
-      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
-    }"
-  >
-    <div
-        :class="
-        props.transparent || props.light || props.dark
-          ? 'container'
-          : 'container-fluid px-0'
-      "
-    >
-      <RouterLink
-          class="navbar-brand d-none d-md-block"
-          :class="[
-          (props.transparent && textDark.value) || !props.transparent
-            ? 'text-dark font-weight-bolder ms-sm-3'
-            : 'text-white font-weight-bolder ms-sm-3'
-        ]"
-          :to="{ name: 'home' }"
-          rel="tooltip"
-          title="Designed and Coded by Creative Tim"
-          data-placement="bottom"
-      >
+  <nav class="navbar navbar-expand-lg top-0 z-index-3 w-50 shadow-none navbar-transparent position-absolute my-3 ">
 
+    <RouterLink :to="{ name: 'home' }">
+      <img src="../assets/img/icon/LLW.png" width="170.5" height="71">
+    </RouterLink>
 
-                <img src="../assets/img/icon/LLW.png" width="51.15" height="21.3">
-
-
-
-
-
-      </RouterLink>
-
-
-
+    <div class="container ">
+<!--        :class="-->
+<!--        props.transparent || props.light || props.dark-->
+<!--          ? 'container'-->
+<!--          : 'container-fluid px-0'-->
+<!--      "-->
 
 
 
@@ -165,7 +135,7 @@ watch(
                 class="nav-link d-flex cursor-pointer align-items-center"
             >
               <svg t="1695213574640"
-                   class="material-icons  opacity-6"
+                   class="material-icons  opacity-8"
                    viewBox="0 0 1024 1024"
                    xmlns="http://www.w3.org/2000/svg"
                    p-id="4003"
@@ -174,7 +144,7 @@ watch(
               >
                 <path
                     d="M448 85.333333a362.666667 362.666667 0 0 1 284.842667 587.178667l193.28 193.28a42.666667 42.666667 0 0 1-60.288 60.373333l-193.365334-193.28A362.666667 362.666667 0 1 1 448 85.333333z m0 85.333334a277.333333 277.333333 0 1 0 0 554.666666 277.333333 277.333333 0 0 0 0-554.666666z"
-                    fill="#000000" p-id="4004"
+                    fill="#ffffff" p-id="4004"
                 >
 
                 </path>

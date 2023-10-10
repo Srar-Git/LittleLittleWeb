@@ -37,12 +37,13 @@ watch(route, (newValue, oldValue) => {
 
 <template>
   <div class="header-a"></div>
-  <div class="container">
-      <div class="col-5 ">
-        <Navbar transparent/>
+  <div class="container ">
+    <div class="row">
+      <div class="col-5">
+  <Navbar transparent/>
       </div>
-  </div>
-
+      </div>
+      </div>
 
   <Article/>
 
