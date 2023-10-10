@@ -5,7 +5,7 @@ import {onMounted, ref} from "vue";
 import setMaterialInput from "../../../assets/js/material-input";
 import {getArticleDetail} from "../../../api/index.js"
 import {useRoute} from "vue-router";
-import { mavonEditor } from 'mavon-editor'
+import {mavonEditor} from 'mavon-editor'
 import MDEditor from "../Components/MDEditor.vue";
 
 const aContent = ref()//文章内容
@@ -28,7 +28,6 @@ async function getArticle(info) {
 
 
 }
-
 
 
 </script>
@@ -80,7 +79,6 @@ export default {
 }
 
 
-
 </script>
 
 <style>
@@ -88,17 +86,20 @@ export default {
   color: #515762;
   font-weight: normal;
 }
+
 *.move-on-hover2:hover {
   color: #8643f5;
   font-weight: normal;
 }
-.header-article{
+
+.header-article {
   background-color: #f6f8fc;
-  padding-left: 6rem;
+
   padding-bottom: 15px;
   padding-top: 15px;
 }
-.mulu{
+
+.mulu {
   height: 40px;
   color: #bcc1ca;
   background-color: white;
@@ -108,34 +109,38 @@ export default {
 }
 </style>
 <template>
-  <section >
+  <section>
 
 
-
-
-    <div class="header-article align-items-center" >
-      <div class="col-auto " >
-        <RouterLink :to="{ name: 'home' }">
-          <span class="move-on-hover2 me-3 h5 ">首页</span>
-        </RouterLink>
-        <span class="h5 me-3 text-gray text-lighter">/</span>
-        <RouterLink v-if="articleDetail"  :to="{path:'/article/category',query: {categoryId: articleDetail.categoryId}}">
-          <span class="move-on-hover2 me-3 h5" v-if="articleDetail" >{{articleDetail.categoryName}}</span>
-        </RouterLink>
-        <span class="h5 me-3 text-gray text-lighter">/</span>
-        <span class="h5 me-3 text-gray" v-if="articleDetail">{{articleDetail.articleTitle}}</span>
+    <div class=" header-article">
+      <div class="container">
+        <div class="row">
+          <div class="col-5">
+            <RouterLink :to="{ name: 'home' }">
+              <span class="move-on-hover2 me-3 h5 ">首页</span>
+            </RouterLink>
+            <span class="h5 me-3 text-gray text-lighter">/</span>
+            <RouterLink v-if="articleDetail"
+                        :to="{path:'/article/category',query: {categoryId: articleDetail.categoryId}}">
+              <span class="move-on-hover2 me-3 h5" v-if="articleDetail">{{ articleDetail.categoryName }}</span>
+            </RouterLink>
+            <span class="h5 me-3 text-gray text-lighter">/</span>
+            <span class="h5 me-3 text-gray" v-if="articleDetail">{{ articleDetail.articleTitle }}</span>
+          </div>
+        </div>
       </div>
     </div>
 
-  <div class="container" style="margin-top: 3rem">
-    <div class="row" >
-      <div class="col-3 me-4">
-        <div class="position-sticky mulu"  v-if="articleDetail"  style="top: 30px !important;" >目录 (点击跳转)</div>
+    <div class="container" style="margin-top: 3rem">
+      <div class="row">
+        <div class="col-3 me-4">
+          <div class="position-sticky mulu" v-if="articleDetail" style="top: 30px !important;">目录 (点击跳转)</div>
+        </div>
+        <div class="card card-body blur shadow-secondary col-7" v-if="articleDetail">a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>br>a<br>a<br>asda<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a
+        </div>
       </div>
-      <div class="card card-body blur shadow-secondary col-7" v-if="articleDetail" >a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br><br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>br>a<br>a<br>asda<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a</div>
     </div>
 
 
-  </div>
   </section>
 </template>
