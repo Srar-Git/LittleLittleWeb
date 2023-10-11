@@ -28,9 +28,9 @@ watch(route, (newValue, oldValue) => {
 </script>
 
 <style>
-.header-a{
+.header-a {
   background-color: #8643f5;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   padding-top: 3rem;
 }
 </style>
@@ -40,10 +40,10 @@ watch(route, (newValue, oldValue) => {
   <div class="container ">
     <div class="row">
 
-  <Navbar transparent/>
+      <Navbar transparent/>
 
-      </div>
-      </div>
+    </div>
+  </div>
 
   <Article/>
 
