@@ -66,7 +66,13 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-
+                <version>3.0.5</version>
+            </dependency>
+            <!-- redis的依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>3.0.5</version>
             </dependency>
             <!-- mybatis-plus  -->
             <dependency>
