@@ -41,28 +41,13 @@ onMounted(() => {
                 <div
                     class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1"
                 >
-                  <h4
-                      class="text-white font-weight-bolder text-center mt-2 mb-0"
+<!--                  <img src="../../assets/img/icon/logo.png" height="79.3" width="341" alt="">-->
+                  <h3
+                      class="text-white font-weight-bolder text-center mt-0 mb-0"
                   >
-                    Sign in
-                  </h4>
-                  <div class="row mt-3">
-                    <div class="col-2 text-center ms-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-facebook text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center px-1">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-github text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center me-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-google text-white text-lg"></i>
-                      </a>
-                    </div>
-                  </div>
+                    登    陆
+                  </h3>
+
                 </div>
               </div>
               <div class="card-body">
@@ -70,13 +55,13 @@ onMounted(() => {
                   <MaterialInput
                       id="email"
                       class="input-group-outline my-3"
-                      :label="{ text: 'Email', class: 'form-label' }"
+                      :label="{ text: '邮箱', class: 'form-label' }"
                       type="email"
                   />
                   <MaterialInput
                       id="password"
                       class="input-group-outline mb-3"
-                      :label="{ text: 'Password', class: 'form-label' }"
+                      :label="{ text: '密码', class: 'form-label' }"
                       type="password"
                   />
                   <MaterialSwitch
@@ -84,7 +69,7 @@ onMounted(() => {
                       id="rememberMe"
                       labelClass="mb-0 ms-3"
                       checked
-                  >Remember me</MaterialSwitch
+                  >记住密码</MaterialSwitch
                   >
 
                   <div class="text-center">
@@ -93,15 +78,15 @@ onMounted(() => {
                         variant="gradient"
                         color="success"
                         fullWidth
-                    >Sign in</MaterialButton
+                    >登陆</MaterialButton
                     >
                   </div>
                   <p class="mt-4 text-sm text-center">
-                    Don't have an account?
+                    没有账号?
                     <a
                         href="#"
                         class="text-success text-gradient font-weight-bold"
-                    >Sign up</a
+                    >请联系buptanlan@gmail.com申请</a
                     >
                   </p>
                 </form>
@@ -110,65 +95,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <footer class="footer position-absolute bottom-2 py-2 w-100">
-        <div class="container">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-12 col-md-6 my-auto">
-              <div
-                  class="copyright text-center text-sm text-white text-lg-start"
-              >
-                © {{ new Date().getFullYear() }}, made with
-                <i class="fa fa-heart" aria-hidden="true"></i> by
-                <a
-                    href="https://www.creative-tim.com"
-                    class="font-weight-bold text-white"
-                    target="_blank"
-                >Creative Tim</a
-                >
-                for a better web.
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <ul
-                  class="nav nav-footer justify-content-center justify-content-lg-end"
-              >
-                <li class="nav-item">
-                  <a
-                      href="https://www.creative-tim.com"
-                      class="nav-link text-white"
-                      target="_blank"
-                  >Creative Tim</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                      href="https://www.creative-tim.com/presentation"
-                      class="nav-link text-white"
-                      target="_blank"
-                  >About Us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                      href="https://www.creative-tim.com/blog"
-                      class="nav-link text-white"
-                      target="_blank"
-                  >Blog</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                      href="https://www.creative-tim.com/license"
-                      class="nav-link pe-0 text-white"
-                      target="_blank"
-                  >License</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+
     </div>
   </Header>
 </template>
