@@ -128,7 +128,7 @@ watch(
   <nav class="navbar navbar-expand-lg z-index-3 shadow-none navbar-transparent position-absolute  "
        style="top: 0.5%;width: 89%;">
 
-    <div class="grid-container ">
+    <div class="grid-container">
       <div class=" " style="">
         <RouterLink :to="{ name: 'home' }">
           <img src="../assets/img/icon/LLW.png" width="170.5" height="71">
