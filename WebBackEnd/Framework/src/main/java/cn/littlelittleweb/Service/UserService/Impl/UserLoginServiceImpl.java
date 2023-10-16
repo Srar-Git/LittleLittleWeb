@@ -16,8 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.security.Security;
 import java.util.Objects;
 
 @Service
@@ -42,7 +44,7 @@ public class UserLoginServiceImpl extends ServiceImpl<UserMapper, User> implemen
         Long userId = loginUser.getUser().getId();
         String jwt = JwtUtil.createJWT(userId.toString());
         //把用户信息存入redis
-        redisCache.setCacheObject(StaticContent.REDIS_KEY_FRONTEND_USER +userId, loginUser);
+        redisCache.setCacheObject(StaticContent.REDIS_KEY_WEB_USER_PREFIX +userId, loginUser);
         //把token和user info封装返回
         UserVO userVO = BeanCopyUtils.copyBean(loginUser.getUser(), UserVO.class);
         UserLoginVO vo = new UserLoginVO(jwt, userVO);
@@ -51,6 +53,16 @@ public class UserLoginServiceImpl extends ServiceImpl<UserMapper, User> implemen
 
     @Override
     public ResponseResult logout() {
-        return null;
+        //获取token获取userid
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+
+        //获取userid
+        Long userId = loginUser.getUser().getId();
+
+        //删除redis信息
+        redisCache.deleteObject(StaticContent.REDIS_KEY_WEB_USER_PREFIX+userId);
+
+        return ResponseResult.okResult();
     }
 }
