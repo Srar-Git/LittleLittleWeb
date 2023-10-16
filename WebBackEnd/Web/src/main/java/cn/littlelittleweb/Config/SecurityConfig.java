@@ -13,7 +13,9 @@ import org.springframework.security.config.ldap.EmbeddedLdapServerContextSourceF
 import org.springframework.security.config.ldap.LdapBindAuthenticationManagerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
@@ -26,6 +28,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig  {
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+    @Autowired
+    private AuthenticationEntryPoint authenticationEntryPoint;
+    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -40,6 +46,11 @@ public class SecurityConfig  {
                 .authorizeRequests()
                 .requestMatchers("/login").anonymous()
                 .anyRequest().permitAll();
+        //配置异常处理器
+        http.exceptionHandling()
+                .authenticationEntryPoint()
+                        .accessDeniedHandler()
+
         http.logout().disable();
         http.cors();
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
