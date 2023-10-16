@@ -2,6 +2,8 @@ package cn.littlelittleweb.Controller.UserController;
 
 import cn.littlelittleweb.Domain.Entity.UserEntity.User;
 import cn.littlelittleweb.Domain.ResponseResult;
+import cn.littlelittleweb.Enums.AppHttpCodeEnum;
+import cn.littlelittleweb.Exception.SystemException;
 import cn.littlelittleweb.Service.UserService.UserLoginService;
 import org.apache.poi.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class UserLoginController {
         if(!StringUtils.hasText(user.getUserName())){
             //提示： 必须要传用户
 //            throw new RuntimeException()
+            throw new SystemException(AppHttpCodeEnum.REQUIRE_USERNAME);
         }
 
         return userLoginService.login(user);
