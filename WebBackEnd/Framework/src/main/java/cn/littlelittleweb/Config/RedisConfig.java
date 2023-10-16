@@ -1,5 +1,6 @@
 package cn.littlelittleweb.Config;
 
+import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -15,8 +16,10 @@ public class RedisConfig {
     {
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(connectionFactory);
+            //低版本fastjson用这个
+//        FastJsonRedisSerializer serializer = new FastJsonRedisSerializer(Object.class);
+        GenericFastJsonRedisSerializer serializer = new GenericFastJsonRedisSerializer();
 
-        FastJsonRedisSerializer serializer = new FastJsonRedisSerializer(Object.class);
 
         // 使用StringRedisSerializer来序列化和反序列化redis的key值
         template.setKeySerializer(new StringRedisSerializer());

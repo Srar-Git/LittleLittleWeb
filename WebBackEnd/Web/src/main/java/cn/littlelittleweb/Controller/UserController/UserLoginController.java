@@ -30,7 +30,7 @@ public class UserLoginController {
 
         return userLoginService.login(user);
     }
-    @PostMapping("/user/logout")
+    @PostMapping("/logout")
     public ResponseResult logout(){
         return userLoginService.logout();
     }

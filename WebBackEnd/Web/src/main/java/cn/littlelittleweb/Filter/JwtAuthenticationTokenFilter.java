@@ -3,6 +3,7 @@ package cn.littlelittleweb.Filter;
 import cn.littlelittleweb.Domain.Entity.UserEntity.LoginUser;
 import cn.littlelittleweb.Domain.ResponseResult;
 import cn.littlelittleweb.Enums.AppHttpCodeEnum;
+import cn.littlelittleweb.StaticContent.StaticContent;
 import cn.littlelittleweb.Utils.JwtUtil;
 import cn.littlelittleweb.Utils.RedisCache;
 import cn.littlelittleweb.Utils.WebUtils;
@@ -51,7 +52,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
         String userId = claims.getSubject();
         //从redis中获取用户信息
-        LoginUser loginUser = redisCache.getCacheObject("bloglogin:" + userId);
+        LoginUser loginUser = (LoginUser)redisCache.getCacheObject(StaticContent.REDIS_KEY_WEB_USER_PREFIX + userId);
         //如果获取不到
         if(Objects.isNull(loginUser)){
             //说明登录过期  提示重新登录
