@@ -18,7 +18,9 @@ export const staticRoutes = [
   {
     path: '/login',
     component: () => import('../pages/Login/Login.vue'),
-
+    meta: {
+      auth: false
+    },
     name: 'login'
   }, //注册登录
 ];

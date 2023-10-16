@@ -26,6 +26,17 @@ const props = defineProps({
       label: "登陆"
     })
   },
+  action_logined: {
+    type: Object,
+    route: String,
+    color: String,
+    label: String,
+    default: () => ({
+      route: "https://github.com/AnLan1214090013/LittleLittleWeb",
+      color: "bg-gradient-info",
+      label: "个人中心"
+    })
+  },
   transparent: {
     type: Boolean,
     default: false
@@ -43,6 +54,10 @@ const props = defineProps({
     default: false
   },
   darkText: {
+    type: Boolean,
+    default: false
+  },
+  hasLogin: {
     type: Boolean,
     default: false
   }
@@ -720,7 +735,19 @@ watch(
             </a>
           </li>
         </ul>
-        <ul class="navbar-nav d-lg-block d-none">
+<!--        登陆按钮-->
+        <ul v-if="hasLogin" class="navbar-nav d-lg-block d-none">
+          <li class="nav-item">
+            <a
+                :href="action_logined.route"
+                class="btn btn-sm mb-0"
+                :class="action_logined.color"
+                onclick="smoothToPricing('pricing-soft-ui')"
+            >{{ action_logined.label }}</a
+            >
+          </li>
+        </ul>
+        <ul v-if="!hasLogin" class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
             <a
                 :href="action.route"
