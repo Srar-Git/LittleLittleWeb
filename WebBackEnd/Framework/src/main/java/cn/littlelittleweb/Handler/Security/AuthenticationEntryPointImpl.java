@@ -5,6 +5,7 @@ import cn.littlelittleweb.Enums.AppHttpCodeEnum;
 import cn.littlelittleweb.Utils.WebUtils;
 import com.alibaba.fastjson.JSON;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.BadCredentialsException;
