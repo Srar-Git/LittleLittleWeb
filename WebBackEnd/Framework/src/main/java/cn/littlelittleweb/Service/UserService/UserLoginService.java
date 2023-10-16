@@ -6,4 +6,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 public interface UserLoginService extends IService<User> {
     ResponseResult login(User user);
+
+    ResponseResult logout();
 }

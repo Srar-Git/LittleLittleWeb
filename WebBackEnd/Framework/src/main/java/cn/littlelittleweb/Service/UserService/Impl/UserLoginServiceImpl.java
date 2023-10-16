@@ -48,4 +48,9 @@ public class UserLoginServiceImpl extends ServiceImpl<UserMapper, User> implemen
         UserLoginVO vo = new UserLoginVO(jwt, userVO);
         return ResponseResult.okResult(vo);
     }
+
+    @Override
+    public ResponseResult logout() {
+        return null;
+    }
 }
