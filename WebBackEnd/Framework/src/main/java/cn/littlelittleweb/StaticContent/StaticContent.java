@@ -18,6 +18,9 @@ public class StaticContent {
     public static final int ARTICLE_IS_RECOMMEND_YES = 1;
 
 
+    public static final String REDIS_KEY_FRONTEND_USER = "weblogin:";
+    public static final String REDIS_KEY_BACKEND_USER = "adminlogin:";
+
 
 
 

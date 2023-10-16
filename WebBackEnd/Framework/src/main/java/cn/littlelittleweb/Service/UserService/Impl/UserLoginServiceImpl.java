@@ -7,6 +7,7 @@ import cn.littlelittleweb.Domain.VO.UserVO.UserLoginVO;
 import cn.littlelittleweb.Domain.VO.UserVO.UserVO;
 import cn.littlelittleweb.Mapper.UserMapper.UserMapper;
 import cn.littlelittleweb.Service.UserService.UserLoginService;
+import cn.littlelittleweb.StaticContent.StaticContent;
 import cn.littlelittleweb.Utils.BeanCopyUtils;
 import cn.littlelittleweb.Utils.JwtUtil;
 import cn.littlelittleweb.Utils.RedisCache;
@@ -41,7 +42,7 @@ public class UserLoginServiceImpl extends ServiceImpl<UserMapper, User> implemen
         Long userId = loginUser.getUser().getId();
         String jwt = JwtUtil.createJWT(userId.toString());
         //把用户信息存入redis
-        redisCache.setCacheObject("weblogin:"+userId, loginUser);
+        redisCache.setCacheObject(StaticContent.REDIS_KEY_FRONTEND_USER +userId, loginUser);
         //把token和user info封装返回
         UserVO userVO = BeanCopyUtils.copyBean(loginUser.getUser(), UserVO.class);
         UserLoginVO vo = new UserLoginVO(jwt, userVO);
