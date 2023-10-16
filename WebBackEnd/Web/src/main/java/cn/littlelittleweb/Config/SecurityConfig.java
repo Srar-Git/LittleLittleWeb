@@ -25,15 +25,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 
-public class SecurityConfig  {
+public class SecurityConfig {
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
     @Autowired
     private AuthenticationEntryPoint authenticationEntryPoint;
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
+
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -48,8 +49,8 @@ public class SecurityConfig  {
                 .anyRequest().permitAll();
         //配置异常处理器
         http.exceptionHandling()
-                .authenticationEntryPoint()
-                        .accessDeniedHandler()
+                .authenticationEntryPoint(authenticationEntryPoint)
+                .accessDeniedHandler(accessDeniedHandler);
 
         http.logout().disable();
         http.cors();
@@ -62,7 +63,6 @@ public class SecurityConfig  {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-
 
 
 }
