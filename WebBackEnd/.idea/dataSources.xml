@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://123.56.66.208:3306/littlelittleweb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="aliyun" uuid="57d7282f-811f-4594-a28b-3b4fd2e21242">
+      <driver-ref>redis</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
+      <jdbc-url>jdbc:redis://123.56.66.208:6379/0</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
