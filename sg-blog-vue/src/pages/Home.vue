@@ -1,6 +1,10 @@
 <!-- 首页 -->
 <template>
     <div>
+<!--      <header>-->
+<!--        <navv style="z-index: 999"></navv>-->
+<!--      </header>-->
+
         <sg-navbar></sg-navbar>
         <div class="container">
             <el-row  :gutter="30">
@@ -19,6 +23,7 @@
 import header from '../components/header.vue'
 import articlelist from '../components/articlelist.vue'
 import rightlist from '../components/rightlist.vue'
+import Nav from '../components/smallComponents/Navigation.vue'
     export default {
         name:'Home',
         data() { //选项 / 数据
@@ -30,9 +35,11 @@ import rightlist from '../components/rightlist.vue'
 
         },
         components: { //定义组件
+          'navv': Nav,
             'sg-navbar':header,
             'sg-articlelist':articlelist,
             'sg-rightlist':rightlist,
+
         },
         created() { //生命周期函数
 
@@ -41,5 +48,19 @@ import rightlist from '../components/rightlist.vue'
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'montserrat', sans-serif;
+}
+
+header {
+  width: 100vw;
+  background-color: #222;
+  padding: 18px;
+}
 </style>
