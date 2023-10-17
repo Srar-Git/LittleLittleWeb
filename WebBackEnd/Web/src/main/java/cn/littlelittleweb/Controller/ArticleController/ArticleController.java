@@ -26,8 +26,8 @@ public class ArticleController {
     public ResponseResult getArticleList(Integer pageNum, Integer pageSize, Integer categoryId){
         return articleService.articleList(pageNum, pageSize, categoryId);
     }
-    @GetMapping("/articleDetail")
-    public ResponseResult getArticleDetail(Integer articleId){
+    @GetMapping("/{id}")
+    public ResponseResult getArticleDetail(@PathVariable("id")Integer articleId){
         return articleService.articleDetail(articleId);
     }
 

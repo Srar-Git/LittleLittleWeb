@@ -48,6 +48,7 @@ public class SecurityConfig {
                 .requestMatchers("/login").anonymous()
                 //注销接口需要认证才能访问
                 .requestMatchers("/logout").authenticated()
+                .requestMatchers("/user/userInfo").authenticated()
                 .anyRequest().permitAll();
         //配置异常处理器
         http.exceptionHandling()
