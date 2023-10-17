@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class UserLoginVO {
 
     private String token;
-    private UserVO userVO;
+    private UserVO userInfo;
 
 
 

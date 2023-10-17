@@ -1,8 +1,11 @@
 <template>
   <div class="headBox">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"
              :router="true">
-      <el-menu-item index="/Home"><i class="fa fa-wa fa-home"></i> 首页</el-menu-item>
+
+      <el-menu-item index="/Home2" style="margin-left: 0%">
+          <img src="../../../static/img/icon/LLW.png" width="59" >
+      </el-menu-item>
       <el-submenu index="/Share">
         <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>
         <el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index"
@@ -179,13 +182,13 @@ export default {
 
 
   },
-  // mounted() { //页面元素加载完成
-  //   var that = this;
-  //   var timer = setTimeout(function () {
-  //     Typeit(that.$store.state.themeObj.user_start, "#luke"); //打字机效果
-  //     clearTimeout(timer);
-  //   }, 500);
-  // }
+  mounted() { //页面元素加载完成
+    var that = this;
+    var timer = setTimeout(function () {
+      // Typeit(that.$store.state.themeObj.user_start, "#luke"); //打字机效果
+      clearTimeout(timer);
+    }, 500);
+  }
 }
 </script>
 
@@ -195,20 +198,21 @@ export default {
 /*头部导航栏盒子*/
 
 .headBack {
-  width: 100%;
-  background: rgba(40, 42, 44, 0.6);
+  width: 80%;
+  background: rgba(255, 255, 255, 0.92);
   /*margin-bottom:30px;*/
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2), 0 0 7px 0 rgba(0, 0, 0, .3);
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 10%;
+  top: 1%;
   right: 0;
   z-index: 100;
+  border-radius: 12px;
 }
 
 .headBox li.is-active {
   /*background: #48456C;*/
-  background: rgba(73, 69, 107, 0.7);
+  background: rgb(231, 55, 55);
 }
 
 .el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
@@ -222,8 +226,8 @@ export default {
 
 .headBox .el-menu-demo li.el-menu-item,
 .headBox .el-menu--horizontal .el-submenu .el-submenu__title {
-  height: 38px;
-  line-height: 38px;
+  height: 48px;
+  line-height: 48px;
   border-bottom: none !important;
 
 }
@@ -242,7 +246,7 @@ export default {
 .headBox ul li.el-menu-item:hover,
 .headBox .el-submenu div.el-submenu__title,
 .headBox .el-submenu__title i.el-submenu__icon-arrow {
-  color: #fff;
+  color: rgb(68, 67, 67);
 }
 
 .headBox .el-menu--horizontal .el-submenu > .el-menu {
@@ -253,7 +257,7 @@ export default {
 
 .headBox > ul li.el-menu-item:hover,
 .headBox > ul li.el-submenu:hover .el-submenu__title {
-  background: #48456C;
+  background: rgba(73, 69, 107, 0.7);
   border-bottom: none;
 }
 
@@ -267,7 +271,7 @@ export default {
 }
 
 .headBox > ul .el-submenu .el-menu .el-menu-item:hover {
-  background: #64609E;
+  background: #25b5c2;
 }
 
 /*pc搜索框*/
