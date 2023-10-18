@@ -3,7 +3,7 @@
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"
              :router="true">
 
-      <el-menu-item index="/Home2" style="margin-left: 0%">
+      <el-menu-item index="/Home23" style="margin-left: 0%">
           <img src="../../../static/img/icon/LLW.png" width="59" >
       </el-menu-item>
       <el-submenu index="/Share">
