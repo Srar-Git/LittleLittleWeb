@@ -1,39 +1,60 @@
 <template>
-  <div class="headBox">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"
-             :router="true">
 
-      <el-menu-item index="/Home23" style="margin-left: 0%">
-          <img src="../../../static/img/icon/LLW.png" width="59" >
-      </el-menu-item>
-      <el-submenu index="/Share">
-        <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>
-        <el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index"
-                      :index="'/Share?classId='+item.id">{{ item.categoryName }}
-        </el-menu-item>
-      </el-submenu>
-      <el-menu-item index="/Reward"><i class="fa fa-wa fa-cny"></i> 赞赏</el-menu-item>
-      <el-menu-item index="/Friendslink"><i class="fa fa-wa fa-users"></i>友链</el-menu-item>
+  <b-navbar toggleable="lg" type="dark" variant="dark" style="width:100%;" fixed="top">
+    <div class="container">
+      <b-navbar-brand href="#"><img src="../../../static/img/icon/LLW.png" width="59" ></b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item href="#">首页</b-nav-item>
+          <!-- <b-nav-item href="#" disabled>xxx</b-nav-item> -->
+        </b-navbar-nav>
 
-      <div class="userInfo">
-        <div v-show="!haslogin" class="nologin">
-          <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"
-                                                                                @click="logoinFun(0)">&nbsp;注册</a>
-        </div>
-        <div v-show="haslogin" class="haslogin">
-          <i class="fa fa-fw fa-user-circle userImg"></i>
-          <ul class="haslogin-info">
-            <li>
-              <a href="#/UserInfo">个人中心</a>
-            </li>
-            <li>
-              <a href="javascript:void(0);" @click="userlogout">退出登录</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </el-menu>
-  </div>
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item href="#detail">详情</b-nav-item>
+          <b-nav-item href="#skill">专业技能</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </div>
+    </b-navbar>
+
+<!--  <div class="headBox">-->
+<!--    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"-->
+<!--             :router="true" style="align-items: end">-->
+
+
+<!--      <el-menu-item index="/Home23" style="left: 0px">-->
+<!--          <img src="../../../static/img/icon/LLW.png" width="59" >-->
+<!--      </el-menu-item>-->
+<!--      <el-submenu index="/Share">-->
+<!--        <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>-->
+<!--        <el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index"-->
+<!--                      :index="'/Share?classId='+item.id">{{ item.categoryName }}-->
+<!--        </el-menu-item>-->
+<!--      </el-submenu>-->
+<!--      <el-menu-item index="/Reward"><i class="fa fa-wa fa-cny"></i> 赞赏</el-menu-item>-->
+<!--      <el-menu-item index="/Friendslink"><i class="fa fa-wa fa-users"></i>友链</el-menu-item>-->
+
+<!--      <div class="userInfo">-->
+<!--        <div v-show="!haslogin" class="nologin">-->
+<!--          <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"-->
+<!--                                                                                @click="logoinFun(0)">&nbsp;注册</a>-->
+<!--        </div>-->
+<!--        <div v-show="haslogin" class="haslogin">-->
+<!--          <i class="fa fa-fw fa-user-circle userImg"></i>-->
+<!--          <ul class="haslogin-info">-->
+<!--            <li>-->
+<!--              <a href="#/UserInfo">个人中心</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="javascript:void(0);" @click="userlogout">退出登录</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </el-menu>-->
+<!--  </div>-->
 </template>
 
 <script>
@@ -198,12 +219,12 @@ export default {
 /*头部导航栏盒子*/
 
 .headBack {
-  width: 80%;
+  width: 100%;
   background: rgba(255, 255, 255, 0.92);
   /*margin-bottom:30px;*/
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2), 0 0 7px 0 rgba(0, 0, 0, .3);
   position: fixed;
-  left: 10%;
+  left: 0%;
   top: 1%;
   right: 0;
   z-index: 100;
