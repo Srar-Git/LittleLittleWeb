@@ -16,6 +16,26 @@
           <b-nav-item href="#skill">专业技能</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
+
+            <div class="userInfo">
+              <div v-show="!haslogin" class="nologin">
+                <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"
+                                                                                      @click="logoinFun(0)">&nbsp;注册</a>
+              </div>
+              <div v-show="haslogin" class="haslogin">
+                <i class="fa fa-fw fa-user-circle userImg"></i>
+                <ul class="haslogin-info">
+                  <li>
+                    <a href="#/UserInfo">个人中心</a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0);" @click="userlogout">退出登录</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
     </div>
     </b-navbar>
 

@@ -27,7 +27,7 @@
       <module name="ChatGPT-bot-infrastructure" options="-parameters" />
       <module name="ChatGPT-bot-interfaces" options="-parameters" />
       <module name="Framework" options="-parameters" />
-      <module name="LittleLittleWeb" options="" />
+      <module name="LittleLittleWeb" options="-parameters" />
       <module name="Web" options="-parameters" />
     </option>
   </component>

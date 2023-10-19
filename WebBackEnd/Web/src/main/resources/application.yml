@@ -36,3 +36,8 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
       id-type: auto
+oss:
+  accessKey: LTAI5tBp1q2pSh2P4eK1nZ1ZPyf
+  secretKey: muPyf3VZjnXY9mZ6denc6x7fsg5Xuaxhu
+  bucket: littlelittleweb
+  endpoint: "oss-rg-china-mainland.aliyuncs.com"

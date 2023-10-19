@@ -49,7 +49,7 @@
                     </div>
                 </section>
             </div>
-            <div v-show="!isEdit" class="tcommonBox">
+            <div v-show="!isEdit" >
                 <header>
                     <h1>
                             个人中心
@@ -133,7 +133,7 @@ import store from '../store'
                      return;
                 }
 
-              
+
                 savaUserInfo(that.userInfoObj).then((response)=>{//保存信息接口，返回展示页
                     that.$message.success( '保存成功！');
                     that.isEdit = false;
