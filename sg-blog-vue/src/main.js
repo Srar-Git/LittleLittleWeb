@@ -12,8 +12,8 @@ import store from './store'
 import MavonEditor from 'mavon-editor'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // app.js
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+
+
 
 
 Vue.prototype.$ = $

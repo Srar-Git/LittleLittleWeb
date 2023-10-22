@@ -1,183 +1,46 @@
 <template>
 
-  <nav class="navbar navbar-expand-lg ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbarDropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
 
-<!--          github-->
-          <a
-            href="https://github.com/AnLan1214090013/LittleLittleWeb"
-            class="nav-link d-flex cursor-pointer align-items-center"
-          >
-            <svg
-              width="20px"
-              height="20px"
-              class="me-2 opacity-6"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              data-testid="GitHubIcon"
-
-            >
-              <path
-                d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"
-              ></path>
-            </svg>
-            Github
-          </a>
-        </form>
+  <div class="headBox align-content-end" >
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"
+             :router="true" style="align-items: end">
 
 
-
+      <el-menu-item index="/" style="left: 0px">
+          <img src="../../../static/img/icon/LLW.png" width="59" >
+      </el-menu-item>
+      <el-submenu index="/Share">
+        <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>
+        <el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index"
+                      :index="'/Share?classId='+item.id">{{ item.categoryName }}
+        </el-menu-item>
+      </el-submenu>
+      <div>
+        <el-menu-item index="/Reward"><i class="fa fa-wa fa-cny"></i> 赞赏</el-menu-item>
+        <el-menu-item index="/Friendslink"><i class="fa fa-wa fa-users"></i>友链</el-menu-item>
 
       </div>
-    </div>
-  </nav>
-
-<!--  <b-navbar toggleable="lg" type="light" variant="light"  fixed="top" class="justify-content-between " style="border-radius: 10px">-->
-<!--    <div class="container">-->
-<!--      <b-navbar-brand href="#" style=""><img src="../../../static/img/icon/LLW.png" width="59" ></b-navbar-brand>-->
-<!--      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>-->
-<!--      <b-collapse id="nav-collapse"  is-nav>-->
 
 
-<!--        <b-navbar-nav  >-->
-<!--          <svg t="1695213574640"-->
-<!--               style="opacity: .6;margin-top: 0.2rem;margin-left: 1rem;margin-right: 0.6rem"-->
-<!--               viewBox="0 0 1024 1024"-->
-<!--               xmlns="http://www.w3.org/2000/svg"-->
-<!--               p-id="4003"-->
-<!--               width="24px"-->
-<!--               height="24px"-->
-<!--          >-->
-<!--            <path-->
-<!--              d="M448 85.333333a362.666667 362.666667 0 0 1 284.842667 587.178667l193.28 193.28a42.666667 42.666667 0 0 1-60.288 60.373333l-193.365334-193.28A362.666667 362.666667 0 1 1 448 85.333333z m0 85.333334a277.333333 277.333333 0 1 0 0 554.666666 277.333333 277.333333 0 0 0 0-554.666666z"-->
-<!--              fill="#000000" p-id="4004"-->
-<!--            >-->
-
-<!--            </path>-->
-<!--          </svg>-->
-<!--          <b-nav-form>-->
-<!--            <b-form-input  class="form-control me-2 w-120" style="border-radius: 5px;height: 30px" placeholder="在此输入查找内容"></b-form-input>-->
-
-<!--          </b-nav-form>-->
-<!--        </b-navbar-nav>-->
-
-
-<!--        &lt;!&ndash; Right aligned nav items &ndash;&gt;-->
-<!--        <b-navbar-nav class="ms-auto" >-->
-<!--          <div style="display: flex;">-->
-<!--            <svg style="flex: 1;margin-top: 0.5rem;margin-right: -0.5rem" t="1697960537880" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2765" width="20" height="20"><path d="M320 320H160L320 160z m448-96v576a96 96 0 0 1-96 96h-448A96 96 0 0 1 128 800V384h256V128h288A96 96 0 0 1 768 224z m-192 512a32 32 0 0 0-32-32h-256a32 32 0 0 0 0 64h256a32 32 0 0 0 32-32z m64-128a32 32 0 0 0-32-32h-320a32 32 0 0 0 0 64h320a32 32 0 0 0 32-32z m0-128a32 32 0 0 0-32-32h-320a32 32 0 0 0 0 64h320a32 32 0 0 0 32-32z m0-192a32 32 0 0 0-32-32H475.968a32 32 0 0 0 0 64H608a32 32 0 0 0 32-32z" fill="#111111" p-id="2766"></path></svg>-->
-<!--            <b-nav-item-dropdown style="flex: 2" text="文章列表" left>-->
-
-<!--              <b-nav-item-dropdown text="按照文章类别查看" left>-->
-<!--                <b-dropdown-item :href="'/Share?classId='+item.id" v-for="(item,index) in classListObj" :key="'class1'+index" :index="'/Share?classId='+item.id">{{ item.categoryName }}</b-dropdown-item>-->
-<!--              </b-nav-item-dropdown>-->
-
-
-<!--              <b-dropdown-item > 按照发布时间查看 </b-dropdown-item>-->
-
-
-<!--            </b-nav-item-dropdown>-->
-<!--          </div>-->
-
-<!--          <b-nav-item href="#detail">详情</b-nav-item>-->
-<!--          <b-nav-item href="#skill">专业技能</b-nav-item>-->
-
-<!--&lt;!&ndash;          <div class="userInfo">&ndash;&gt;-->
-<!--&lt;!&ndash;            <div v-show="!haslogin" class="nologin">&ndash;&gt;-->
-<!--&lt;!&ndash;              <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"&ndash;&gt;-->
-<!--&lt;!&ndash;                                                                                    @click="logoinFun(0)">&nbsp;注册</a>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;            <div v-show="haslogin" class="haslogin">&ndash;&gt;-->
-<!--&lt;!&ndash;              <i class="fa fa-fw fa-user-circle userImg"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;              <ul class="haslogin-info">&ndash;&gt;-->
-<!--&lt;!&ndash;                <li>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <a href="#/UserInfo">个人中心</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li>&ndash;&gt;-->
-<!--&lt;!&ndash;                  <a href="javascript:void(0);" @click="userlogout">退出登录</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </li>&ndash;&gt;-->
-<!--&lt;!&ndash;              </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;          </div>&ndash;&gt;-->
-
-<!--        </b-navbar-nav>-->
-
-
-
-<!--      </b-collapse>-->
-
-
-
-
-<!--    </div>-->
-<!--    </b-navbar>-->
-
-<!--  <div class="headBox">-->
-<!--    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"-->
-<!--             :router="true" style="align-items: end">-->
-
-
-<!--      <el-menu-item index="/Home23" style="left: 0px">-->
-<!--          <img src="../../../static/img/icon/LLW.png" width="59" >-->
-<!--      </el-menu-item>-->
-<!--      <el-submenu index="/Share">-->
-<!--        <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>-->
-<!--        <el-menu-item v-for="(item,index) in classListObj" :key="'class1'+index"-->
-<!--                      :index="'/Share?classId='+item.id">{{ item.categoryName }}-->
-<!--        </el-menu-item>-->
-<!--      </el-submenu>-->
-<!--      <el-menu-item index="/Reward"><i class="fa fa-wa fa-cny"></i> 赞赏</el-menu-item>-->
-<!--      <el-menu-item index="/Friendslink"><i class="fa fa-wa fa-users"></i>友链</el-menu-item>-->
-
-<!--      <div class="userInfo">-->
-<!--        <div v-show="!haslogin" class="nologin">-->
-<!--          <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"-->
-<!--                                                                                @click="logoinFun(0)">&nbsp;注册</a>-->
-<!--        </div>-->
-<!--        <div v-show="haslogin" class="haslogin">-->
-<!--          <i class="fa fa-fw fa-user-circle userImg"></i>-->
-<!--          <ul class="haslogin-info">-->
-<!--            <li>-->
-<!--              <a href="#/UserInfo">个人中心</a>-->
-<!--            </li>-->
-<!--            <li>-->
-<!--              <a href="javascript:void(0);" @click="userlogout">退出登录</a>-->
-<!--            </li>-->
-<!--          </ul>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </el-menu>-->
-<!--  </div>-->
+      <div class="userInfo">
+        <div v-show="!haslogin" class="nologin">
+          <a href="javascript:void(0);" @click="logoinFun(1)">登录&nbsp;</a>|<a href="javascript:void(0);"
+                                                                                @click="logoinFun(0)">&nbsp;注册</a>
+        </div>
+        <div v-show="haslogin" class="haslogin">
+          <i class="fa fa-fw fa-user-circle userImg"></i>
+          <ul class="haslogin-info">
+            <li>
+              <a href="#/UserInfo">个人中心</a>
+            </li>
+            <li>
+              <a href="javascript:void(0);" @click="userlogout">退出登录</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </el-menu>
+  </div>
 </template>
 
 
@@ -185,6 +48,8 @@
 import {logout} from '../../api/user'
 import {removeToken} from '../../utils/auth'
 import {getCategoryList} from '../../api/category'
+import '../../assets/bootstrape/dist/css/bootstrap.min.css'
+import '../../assets/bootstrape/dist/js/bootstrap.min'
 
 import {
   Typeit
@@ -333,13 +198,13 @@ export default {
       // Typeit(that.$store.state.themeObj.user_start, "#luke"); //打字机效果
       clearTimeout(timer);
     }, 500);
-    $(document).ready(() => {
-      // 启用下拉菜单
-      $('.dropdown-toggle').dropdown();
-      // 启用弹出框
-      $('[data-ds-toggle="popover"]').popover();
-      // 其他Bootstrap组件...
-    });
+    // $(document).ready(() => {
+    //   // 启用下拉菜单
+    //   $('.dropdown-toggle').dropdown();
+    //   // 启用弹出框
+    //   $('[data-ds-toggle="popover"]').popover();
+    //   // 其他Bootstrap组件...
+    // });
   }
 }
 </script>
