@@ -4,15 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import $ from 'jquery'
+
 import 'element-ui/lib/theme-default/index.css'
 import './assets/css/style.less'
 import store from './store'
 import MavonEditor from 'mavon-editor'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 // app.js
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
+
+Vue.prototype.$ = $
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(MavonEditor)
