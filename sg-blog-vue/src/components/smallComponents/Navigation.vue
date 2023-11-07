@@ -1,13 +1,18 @@
 <template>
 
 
-  <div class="headBox align-content-end" >
+  <div class="headBox headBack align-content-end" >
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"  @select="handleSelect"
              :router="true" style="align-items: end">
 
 
-      <el-menu-item index="/" style="left: 0px">
-          <img src="../../../static/img/icon/LLW.png" width="59" >
+      <el-menu-item class="dong"  index="/" >
+<!--          <div >-->
+            <img src="../../../static/img/icon/LLW.png"  >
+<!--          </div>-->
+
+
+
       </el-menu-item>
       <el-submenu index="/Share">
         <template slot="title"><i class="fa fa-wa fa-archive"></i> 分类</template>
@@ -48,8 +53,8 @@
 import {logout} from '../../api/user'
 import {removeToken} from '../../utils/auth'
 import {getCategoryList} from '../../api/category'
-import '../../assets/bootstrape/dist/css/bootstrap.min.css'
-import '../../assets/bootstrape/dist/js/bootstrap.min'
+// import '../../assets/bootstrape/dist/css/bootstrap.min.css'
+// import '../../assets/bootstrape/dist/js/bootstrap.min'
 
 import {
   Typeit
@@ -212,13 +217,14 @@ export default {
 <style>
 /*********头部导航栏********/
 
+
 /*头部导航栏盒子*/
 
 .headBack {
   width: 100%;
   background: rgba(255, 255, 255, 0.92);
   /*margin-bottom:30px;*/
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2), 0 0 7px 0 rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2), 0 0 7px 0 rgba(175, 49, 49, 0.3);
   position: fixed;
   left: 0%;
   top: 1%;
@@ -274,13 +280,13 @@ export default {
 
 .headBox > ul li.el-menu-item:hover,
 .headBox > ul li.el-submenu:hover .el-submenu__title {
-  background: rgba(73, 69, 107, 0.7);
+  background: rgba(73, 69, 107, 0.01);
   border-bottom: none;
 }
 
 .headBox > ul .el-submenu .el-menu,
 .headBox > ul .el-submenu .el-menu .el-menu-item {
-  background: #48456C;
+  background: #fcfcfc;
 }
 
 .headBox > ul .el-submenu .el-menu .el-menu-item {
@@ -486,135 +492,24 @@ export default {
 }
 
 
-/*头部背景图*/
-
-.headImgBox {
-  height: 650px;
-  position: relative;
-  width: 100%;
-  background-size: cover;
-  background-position: center 50%;
-  background-repeat: no-repeat;
-  margin-bottom: 90px;
+.dong {
+  width: 120px;
 }
-
-.h-information {
-  text-align: center;
-  width: 100%;
-  margin: auto;
-  position: relative;
-  top: 180px;
-//padding: 10px 0; font-size: 16px;
-//opacity: 0.98; //background: rgba(230, 244, 249, 0.8); //border-radius: 5px; z-index: 1;
-  animation: b 1s ease-out;
-  -webkit-animation: b 1s ease-out;
-}
-
-@-webkit-keyframes b {
-  0% {
-    -webkit-transform: translateY(90px);
-    transform: translateY(90px);
-  }
-  80% {
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px)
-  }
-  90% {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px)
-  }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0)
-  }
-}
-
-@keyframes b {
-  0% {
-    -webkit-transform: translateY(90px);
-    transform: translateY(90px);
-  }
-  80% {
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px)
-  }
-  90% {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px)
-  }
-  to {
-    -webkit-transform: translateY(0);
-    transform: translateY(0)
-  }
-}
-
-.h-information img {
+.dong img {
 //width: 1200px;
-  position: relative;
-  width: 50%;
+//  position: relative;
+  width: 90%;
 //border-radius: 100%;
 //transition: all .4s ease-in-out;
 //-webkit-transition: all .4s ease-in-out;
 //object-fit: cover;
 }
 
-.h-information img:hover {
-  width: 52%;
-}
-
-.h-information h2 {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  /*font-family: 'Sigmar One';*/
-}
-
-.h-information h2 a {
-  background: linear-gradient(to right, #DF2050, #48456D);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.headImgBox .scene {
+.dong img:hover {
   width: 100%;
-  /*height:300px;*/
-  text-align: center;
-  font-size: 100px;
-  font-weight: 200;
-  color: #fff;
-  position: absolute;
-  left: 0;
-  top: 160px;
-  font-family: 'Sigmar One', Arial;
-  text-shadow: 0 2px 2px #47456d;
-
 }
 
-.headImgBox .scene span {
-  transform: matrix(1, 0, 0, 1, 0, 0);
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
-}
 
-.saying:after {
-  content: "|";
-  font-family: Arial, sans-serif;
-  font-size: 1em;
-  /*line-height: 0;*/
-  display: inline-block;
-  vertical-align: baseline;
-  opacity: 1;
-  text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
-  animation: caret 500ms infinite;
-}
 
-@keyframes caret {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
+
 </style>
